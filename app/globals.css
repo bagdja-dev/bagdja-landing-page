@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  /* Pitch deck palette */
+  --bagdja-bg: #1a1d21;
+  --bagdja-surface: #20242a;
+  --bagdja-surface-2: #16181b;
+  --bagdja-border: rgba(224, 226, 229, 0.12);
+  --bagdja-text: #e0e2e5;
+  --bagdja-text-2: #8896a4;
+  --bagdja-accent: #e5a044;
+  --bagdja-accent-2: #5c7e9a;
+
+  /* App tokens */
+  --bg-main: var(--bagdja-bg);
+  --bg-surface: var(--bagdja-surface);
+  --bg-section: var(--bagdja-surface-2);
+  --border-default: var(--bagdja-border);
+  --text-primary: var(--bagdja-text);
+  --text-secondary: var(--bagdja-text-2);
+  --action-primary: var(--bagdja-accent);
+  --action-secondary: var(--bagdja-accent-2);
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--action-primary);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--action-primary);
+  color: #111;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-up {
+  animation: floatUp 0.4s ease-out both;
+}
+
