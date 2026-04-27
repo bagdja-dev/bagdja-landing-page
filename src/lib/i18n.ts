@@ -54,6 +54,23 @@ export type Messages = {
       monetizeDesc: string;
     };
   };
+  heroCarousel: {
+    slides: Array<{
+      id: string;
+      name: string;
+      pill: string;
+      title: string;
+      subtitle: string;
+      ctaWhatsApp: string;
+      ctaEmail: string;
+      stats: Array<{ value: string; label: string }>;
+      right: {
+        title: string;
+        subtitle: string;
+        cards: Array<{ title: string; desc: string }>;
+      };
+    }>;
+  };
   sections: {
     problemEyebrow: string;
     problemTitle: string;
@@ -216,6 +233,76 @@ const en: Messages = {
       monetizeDesc:
         "Subscriptions, usage billing, tax compliance, payouts & analytics.",
     },
+  },
+  heroCarousel: {
+    slides: [
+      {
+        id: "platform",
+        name: "Bagdja Platform",
+        pill: "App Store × Identity Platform × Monetization Layer",
+        title: "The Integrated Distribution Platform for Modern Developers",
+        subtitle:
+          "Bagdja unifies discovery, authentication, and billing into one seamless ecosystem — so teams can ship in days, not months.",
+        ctaWhatsApp: "Talk on WhatsApp",
+        ctaEmail: "Email us",
+        stats: [
+          { value: "< 5 min", label: "Setup time" },
+          { value: "80%", label: "Faster time-to-market" },
+          { value: "60%", label: "Cost reduction" },
+        ],
+        right: {
+          title: "One platform, three pillars",
+          subtitle: "Store • Identity • Monetize",
+          cards: [
+            {
+              title: "Store",
+              desc: "Curated marketplace, recommendations, SEO pages, reviews.",
+            },
+            {
+              title: "Identity",
+              desc: "SSO, social login, MFA, passwordless, user management.",
+            },
+            {
+              title: "Monetize",
+              desc: "Subscriptions, usage billing, tax compliance, payouts & analytics.",
+            },
+          ],
+        },
+      },
+      {
+        id: "software-house",
+        name: "Bagdja Software House",
+        pill: "Custom Apps × Product Engineering × Delivery Partner",
+        title: "Ship custom web & mobile apps with Bagdja",
+        subtitle:
+          "We design, build, and maintain custom applications for startups and teams — from MVP to production.",
+        ctaWhatsApp: "Get a quote on WhatsApp",
+        ctaEmail: "Request via email",
+        stats: [
+          { value: "Web + Mobile", label: "Platforms" },
+          { value: "End-to-end", label: "Design → Dev → QA" },
+          { value: "Integrations", label: "Payments, auth, analytics" },
+        ],
+        right: {
+          title: "Your delivery partner",
+          subtitle: "Build • Integrate • Scale",
+          cards: [
+            {
+              title: "Custom build",
+              desc: "MVPs, dashboards, and production apps tailored to your needs.",
+            },
+            {
+              title: "System integration",
+              desc: "Connect payments, identity, APIs, and data pipelines.",
+            },
+            {
+              title: "Scale & maintain",
+              desc: "Monitoring, iteration, and long-term support.",
+            },
+          ],
+        },
+      },
+    ],
   },
   sections: {
     problemEyebrow: "01 — The Problem",
@@ -428,6 +515,71 @@ const id: Messages = {
         "Subscription, usage billing, compliance pajak, payout & analytics.",
     },
   },
+  heroCarousel: {
+    slides: [
+      {
+        id: "platform",
+        name: "Bagdja Platform",
+        pill: en.hero.pill,
+        title: "Platform Distribusi Terintegrasi untuk Developer Modern",
+        subtitle:
+          "Bagdja menyatukan discovery, autentikasi, dan billing dalam satu ekosistem — agar tim bisa ship dalam hitungan hari, bukan bulan.",
+        ctaWhatsApp: "Chat via WhatsApp",
+        ctaEmail: "Kirim Email",
+        stats: [
+          { value: "< 5 min", label: en.hero.stats.setup },
+          { value: "80%", label: en.hero.stats.speed },
+          { value: "60%", label: en.hero.stats.cost },
+        ],
+        right: {
+          title: "Satu platform, tiga pilar",
+          subtitle: "Store • Identity • Monetize",
+          cards: [
+            { title: en.hero.right.storeTitle, desc: "Marketplace terkurasi, rekomendasi, SEO page, dan ulasan." },
+            { title: en.hero.right.identityTitle, desc: "SSO, social login, MFA, passwordless, dan user management." },
+            {
+              title: en.hero.right.monetizeTitle,
+              desc: "Subscription, usage billing, compliance pajak, payout & analytics.",
+            },
+          ],
+        },
+      },
+      {
+        id: "software-house",
+        name: "Bagdja Software House",
+        pill: "Aplikasi Kustom × Product Engineering × Partner Eksekusi",
+        title: "Bangun aplikasi web & mobile kustom bersama Bagdja",
+        subtitle:
+          "Kami bantu desain, development, dan maintenance aplikasi kustom — dari MVP sampai production.",
+        ctaWhatsApp: "Minta penawaran via WhatsApp",
+        ctaEmail: "Minta via Email",
+        stats: [
+          { value: "Web + Mobile", label: "Platform" },
+          { value: "End-to-end", label: "Desain → Dev → QA" },
+          { value: "Integrasi", label: "Payment, auth, analytics" },
+          { value: "Support", label: "Opsi maintenance" },
+        ],
+        right: {
+          title: "Partner eksekusi Anda",
+          subtitle: "Build • Integrasi • Scale",
+          cards: [
+            {
+              title: "Pembuatan kustom",
+              desc: "MVP, dashboard, dan aplikasi produksi sesuai kebutuhan.",
+            },
+            {
+              title: "Integrasi sistem",
+              desc: "Hubungkan payment, identity, API, dan data.",
+            },
+            {
+              title: "Scale & maintenance",
+              desc: "Monitoring, iterasi, dan support jangka panjang.",
+            },
+          ],
+        },
+      },
+    ],
+  },
   sections: {
     ...en.sections,
     problemEyebrow: "01 — Masalah",
@@ -485,6 +637,58 @@ const ar: Messages = {
       identityDesc: "SSO، تسجيل اجتماعي، MFA، بدون كلمة مرور، وإدارة المستخدمين.",
       monetizeDesc: "اشتراكات، فوترة حسب الاستخدام، امتثال ضريبي، مدفوعات وتحليلات.",
     },
+  },
+  heroCarousel: {
+    slides: [
+      {
+        id: "platform",
+        name: "Bagdja Platform",
+        pill: en.hero.pill,
+        title: "منصة التوزيع المتكاملة للمطورين العصريين",
+        subtitle:
+          "Bagdja توحّد الاكتشاف والمصادقة والفوترة في نظام واحد — لتطلق الفرق منتجاتها خلال أيام لا أشهر.",
+        ctaWhatsApp: "تواصل عبر واتساب",
+        ctaEmail: "راسلنا",
+        stats: [
+          { value: "< 5 min", label: en.hero.stats.setup },
+          { value: "80%", label: en.hero.stats.speed },
+          { value: "60%", label: en.hero.stats.cost },
+        ],
+        right: {
+          title: "منصة واحدة، ثلاثة أعمدة",
+          subtitle: "Store • Identity • Monetize",
+          cards: [
+            { title: en.hero.right.storeTitle, desc: "متجر مُنسّق، توصيات، صفحات SEO، وتقييمات." },
+            { title: en.hero.right.identityTitle, desc: "SSO، تسجيل اجتماعي، MFA، بدون كلمة مرور، وإدارة المستخدمين." },
+            { title: en.hero.right.monetizeTitle, desc: "اشتراكات، فوترة حسب الاستخدام، امتثال ضريبي، مدفوعات وتحليلات." },
+          ],
+        },
+      },
+      {
+        id: "software-house",
+        name: "Bagdja Software House",
+        pill: "تطبيقات مخصصة × هندسة المنتجات × شريك تسليم",
+        title: "ابنِ تطبيقات ويب وموبايل مخصصة مع Bagdja",
+        subtitle: "نصمم ونبني ونصون تطبيقات مخصصة — من MVP إلى الإنتاج.",
+        ctaWhatsApp: "اطلب عرضاً عبر واتساب",
+        ctaEmail: "اطلب عبر البريد",
+        stats: [
+          { value: "ويب + موبايل", label: "المنصات" },
+          { value: "شامل", label: "تصميم → تطوير → QA" },
+          { value: "تكاملات", label: "مدفوعات، هوية، تحليلات" },
+          { value: "دعم", label: "خيارات الصيانة" },
+        ],
+        right: {
+          title: "شريك التسليم الخاص بك",
+          subtitle: "بناء • تكامل • توسّع",
+          cards: [
+            { title: "بناء مخصص", desc: "MVP ولوحات تحكم وتطبيقات إنتاج وفق احتياجك." },
+            { title: "تكامل الأنظمة", desc: "ربط المدفوعات والهوية وواجهات API وخطوط البيانات." },
+            { title: "التوسّع والصيانة", desc: "مراقبة، تحسين مستمر، ودعم طويل الأمد." },
+          ],
+        },
+      },
+    ],
   },
   sections: {
     ...en.sections,
@@ -548,6 +752,58 @@ const zh: Messages = {
       monetizeDesc: "订阅、按量计费、税务合规、打款与数据分析。",
     },
   },
+  heroCarousel: {
+    slides: [
+      {
+        id: "platform",
+        name: "Bagdja Platform",
+        pill: en.hero.pill,
+        title: "面向现代开发者的一体化分发平台",
+        subtitle:
+          "Bagdja 将应用发现、身份认证与计费整合为一个生态系统——让团队以“天”为单位交付，而不是“月”。",
+        ctaWhatsApp: "WhatsApp 咨询",
+        ctaEmail: "发送邮件",
+        stats: [
+          { value: "< 5 min", label: en.hero.stats.setup },
+          { value: "80%", label: en.hero.stats.speed },
+          { value: "60%", label: en.hero.stats.cost },
+        ],
+        right: {
+          title: "一个平台，三大支柱",
+          subtitle: "Store • Identity • Monetize",
+          cards: [
+            { title: en.hero.right.storeTitle, desc: "精选应用市场、推荐、SEO 页面与评价体系。" },
+            { title: en.hero.right.identityTitle, desc: "SSO、社交登录、MFA、免密与用户管理。" },
+            { title: en.hero.right.monetizeTitle, desc: "订阅、按量计费、税务合规、打款与数据分析。" },
+          ],
+        },
+      },
+      {
+        id: "software-house",
+        name: "Bagdja Software House",
+        pill: "定制应用 × 产品工程 × 交付伙伴",
+        title: "与 Bagdja 共建定制 Web 与移动应用",
+        subtitle: "从 MVP 到正式上线：设计、开发与长期维护一站式交付。",
+        ctaWhatsApp: "WhatsApp 获取报价",
+        ctaEmail: "邮件获取报价",
+        stats: [
+          { value: "Web + 移动", label: "平台" },
+          { value: "端到端", label: "设计→开发→测试" },
+          { value: "集成", label: "支付/身份/分析" },
+          { value: "支持", label: "维护选项" },
+        ],
+        right: {
+          title: "你的交付伙伴",
+          subtitle: "构建 • 集成 • 扩展",
+          cards: [
+            { title: "定制开发", desc: "MVP、后台系统与生产级应用按需交付。" },
+            { title: "系统集成", desc: "对接支付、身份、API 与数据管道。" },
+            { title: "扩展与维护", desc: "监控、迭代与长期支持。" },
+          ],
+        },
+      },
+    ],
+  },
   sections: {
     ...en.sections,
     problemEyebrow: "01 — 痛点",
@@ -606,6 +862,62 @@ const es: Messages = {
       monetizeDesc:
         "Suscripciones, cobro por uso, cumplimiento fiscal, pagos y analítica.",
     },
+  },
+  heroCarousel: {
+    slides: [
+      {
+        id: "platform",
+        name: "Bagdja Platform",
+        pill: en.hero.pill,
+        title: "La plataforma integrada de distribución para desarrolladores modernos",
+        subtitle:
+          "Bagdja unifica descubrimiento, autenticación y facturación en un solo ecosistema — para que los equipos lancen en días, no en meses.",
+        ctaWhatsApp: "Hablar por WhatsApp",
+        ctaEmail: "Escríbenos",
+        stats: [
+          { value: "< 5 min", label: en.hero.stats.setup },
+          { value: "80%", label: en.hero.stats.speed },
+          { value: "60%", label: en.hero.stats.cost },
+        ],
+        right: {
+          title: "Una plataforma, tres pilares",
+          subtitle: "Store • Identity • Monetize",
+          cards: [
+            { title: en.hero.right.storeTitle, desc: "Marketplace curado, recomendaciones, páginas SEO y reseñas." },
+            { title: en.hero.right.identityTitle, desc: "SSO, login social, MFA, sin contraseña y gestión de usuarios." },
+            {
+              title: en.hero.right.monetizeTitle,
+              desc: "Suscripciones, cobro por uso, cumplimiento fiscal, pagos y analítica.",
+            },
+          ],
+        },
+      },
+      {
+        id: "software-house",
+        name: "Bagdja Software House",
+        pill: "Apps a medida × Ingeniería de producto × Socio de entrega",
+        title: "Crea apps web y móviles a medida con Bagdja",
+        subtitle:
+          "Diseñamos, desarrollamos y mantenemos aplicaciones personalizadas — de MVP a producción.",
+        ctaWhatsApp: "Pedir cotización por WhatsApp",
+        ctaEmail: "Pedir por email",
+        stats: [
+          { value: "Web + Mobile", label: "Plataformas" },
+          { value: "End-to-end", label: "Diseño → Dev → QA" },
+          { value: "Integraciones", label: "Pagos, identidad, analítica" },
+          { value: "Soporte", label: "Opciones de mantenimiento" },
+        ],
+        right: {
+          title: "Tu socio de entrega",
+          subtitle: "Construir • Integrar • Escalar",
+          cards: [
+            { title: "Desarrollo a medida", desc: "MVPs, dashboards y apps de producción según tu necesidad." },
+            { title: "Integración de sistemas", desc: "Conecta pagos, identidad, APIs y datos." },
+            { title: "Escala y mantenimiento", desc: "Monitoreo, iteración y soporte a largo plazo." },
+          ],
+        },
+      },
+    ],
   },
   sections: {
     ...en.sections,

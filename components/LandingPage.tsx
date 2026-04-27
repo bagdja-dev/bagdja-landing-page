@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { HeroCarousel } from "@/components/HeroCarousel";
 import { getDirection, type Locale, type Messages } from "@/src/lib/i18n";
 
 function Section({
@@ -102,102 +103,7 @@ export function LandingPage({ locale, t }: { locale: Locale; t: Messages }) {
       <Header locale={locale} t={t} />
 
       <main>
-        {/* Hero */}
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-[radial-gradient(800px_circle_at_30%_20%,rgba(229,160,68,0.20),transparent_60%),radial-gradient(700px_circle_at_70%_35%,rgba(92,126,154,0.18),transparent_55%)]" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(26,29,33,0.25),rgba(26,29,33,1))]" />
-          </div>
-
-          <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24">
-            <div className="animate-float-up">
-              <div className="mb-5 inline-flex items-center rounded-full border border-[var(--border-default)] bg-[color:rgba(32,36,42,0.6)] px-3 py-1 text-xs text-[var(--text-secondary)]">
-                {t.hero.pill}
-              </div>
-              <h1 className="text-4xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-5xl">
-                {t.hero.title}
-              </h1>
-              <p className="mt-4 max-w-xl text-base leading-7 text-[var(--text-secondary)]">
-                {t.hero.subtitle}
-              </p>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="https://wa.me/6285188448383"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--action-primary)] px-5 py-3 text-sm font-medium text-[#111] hover:brightness-105"
-                >
-                  {t.hero.ctaWhatsApp}
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-                <a
-                  href="mailto:contact@bagdja.com"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-[var(--border-default)] bg-transparent px-5 py-3 text-sm font-medium text-[var(--text-primary)] hover:border-[color:rgba(229,160,68,0.6)]"
-                >
-                  {t.hero.ctaEmail}
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-
-              <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                <Stat value="1 SDK" label={t.hero.stats.sdk} />
-                <Stat value="< 5 min" label={t.hero.stats.setup} />
-                <Stat value="80%" label={t.hero.stats.speed} />
-                <Stat value="60%" label={t.hero.stats.cost} />
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="rounded-3xl border border-[var(--border-default)] bg-[color:rgba(32,36,42,0.65)] p-6">
-                <div className="flex items-center gap-3">
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[color:rgba(229,160,68,0.16)] text-[var(--action-primary)]">
-                    <Boxes className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-[var(--text-primary)]">
-                      {t.hero.right.title}
-                    </div>
-                    <div className="text-xs text-[var(--text-secondary)]">{t.hero.right.subtitle}</div>
-                  </div>
-                </div>
-
-                <div className="mt-6 space-y-3">
-                  <div className="rounded-2xl border border-[var(--border-default)] bg-[var(--bg-section)] p-4">
-                    <div className="flex items-center gap-2 text-sm font-medium text-[var(--text-primary)]">
-                      <Store className="h-4 w-4 text-[var(--action-secondary)]" />
-                      {t.hero.right.storeTitle}
-                    </div>
-                    <p className="mt-1 text-sm text-[var(--text-secondary)]">
-                      {t.hero.right.storeDesc}
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border border-[var(--border-default)] bg-[var(--bg-section)] p-4">
-                    <div className="flex items-center gap-2 text-sm font-medium text-[var(--text-primary)]">
-                      <KeyRound className="h-4 w-4 text-[var(--action-secondary)]" />
-                      {t.hero.right.identityTitle}
-                    </div>
-                    <p className="mt-1 text-sm text-[var(--text-secondary)]">
-                      {t.hero.right.identityDesc}
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border border-[var(--border-default)] bg-[var(--bg-section)] p-4">
-                    <div className="flex items-center gap-2 text-sm font-medium text-[var(--text-primary)]">
-                      <CreditCard className="h-4 w-4 text-[var(--action-secondary)]" />
-                      {t.hero.right.monetizeTitle}
-                    </div>
-                    <p className="mt-1 text-sm text-[var(--text-secondary)]">
-                      {t.hero.right.monetizeDesc}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pointer-events-none absolute -right-10 -top-10 -z-10 h-40 w-40 rounded-full bg-[color:rgba(229,160,68,0.22)] blur-3xl" />
-              <div className="pointer-events-none absolute -bottom-10 -left-10 -z-10 h-40 w-40 rounded-full bg-[color:rgba(92,126,154,0.22)] blur-3xl" />
-            </div>
-          </div>
-        </section>
+        <HeroCarousel slides={t.heroCarousel.slides} />
 
         <Section
           id="problem"
