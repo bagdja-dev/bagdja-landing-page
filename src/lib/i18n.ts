@@ -186,6 +186,10 @@ export type Messages = {
       users: string;
       nps: string;
     };
+    partnerEyebrow: string;
+    partnerTitle: string;
+    partnerSubtitle: string;
+    partners: Array<{ name: string; logo: string }>;
     ctaTitle: string;
     ctaBody: string;
     ctaPrimary: string;
@@ -199,15 +203,11 @@ export type Messages = {
 
 const en: Messages = {
   nav: {
-    problem: "Problem",
-    solution: "Solution",
-    platform: "Platform",
-    services: "Services",
-    market: "Market",
-    business: "Business",
-    gtm: "Go-to-market",
-    email: "Email",
-    whatsapp: "WhatsApp",
+    problem: "Platform",
+    solution: "Development",
+    platform: "Store",
+    services: "Project",
+    market: "Contact",
   },
   hero: {
     pill: "App Store × Identity Platform × Monetization Layer",
@@ -271,7 +271,7 @@ const en: Messages = {
       },
       {
         id: "software-house",
-        name: "Bagdja Software House",
+        name: "Bagdja Development",
         pill: "Custom Apps × Product Engineering × Delivery Partner",
         title: "Ship custom web & mobile apps with Bagdja",
         subtitle:
@@ -473,6 +473,24 @@ const en: Messages = {
       users: "Target users (Year 1)",
       nps: "Target satisfaction",
     },
+    partnerEyebrow: "06 — Our Partners",
+    partnerTitle: "Our Partners",
+    partnerSubtitle: "We work with industry leaders to deliver exceptional results.",
+    partners: [
+      { name: "InnovateLabs", logo: "/images/partners/allpower.png" },
+      { name: "DataFlow", logo: "/images/partners/sfi.png" },
+      { name: "CloudBase", logo: "/images/partners/cloudflare.png" },
+      { name: "SecureNet", logo: "/images/partners/sbb.png" },
+      { name: "CodeCraft", logo: "/images/partners/unilever.png" },
+      { name: "CodeCraft", logo: "/images/partners/gcf.png" },
+      { name: "AppWorks", logo: "/images/partners/shoppias.webp" },
+      { name: "CloudBase", logo: "/images/partners/jamkrindo.webp" },
+      { name: "DevStudio", logo: "/images/partners/yuanta.png" },
+      { name: "DevStudio", logo: "/images/partners/sreeya.png" },
+      { name: "SecureNet", logo: "/images/partners/tam.png" },
+      { name: "SecureNet", logo: "/images/partners/akasia.png" },
+      { name: "TechCorp", logo: "/images/partners/enerren.png" },
+    ],
     ctaTitle: "Build products, not infrastructure.",
     ctaBody:
       "Bagdja is building the default platform where great products find their audience and users get a seamless identity + subscription experience across apps.",
@@ -546,7 +564,7 @@ const id: Messages = {
       },
       {
         id: "software-house",
-        name: "Bagdja Software House",
+        name: "Bagdja Development",
         pill: "Aplikasi Kustom × Product Engineering × Partner Eksekusi",
         title: "Bangun aplikasi web & mobile kustom bersama Bagdja",
         subtitle:
@@ -600,6 +618,9 @@ const id: Messages = {
     marketTitle: "Ekosistem besar yang menunggu untuk dipersatukan",
     whyNowTitle: "Kenapa sekarang",
     gtmTitle: "Dari nol menjadi ekosistem",
+    partnerEyebrow: "06 — Mitra Kami",
+    partnerTitle: "Dipercaya oleh perusahaan terkemuka",
+    partnerSubtitle: "Kami bekerja dengan pemimpin industri untuk memberikan hasil luar biasa.",
     ctaTitle: "Bangun produk, bukan infrastruktur.",
     ctaPrimary: "Mulai diskusi",
   },
@@ -666,7 +687,7 @@ const ar: Messages = {
       },
       {
         id: "software-house",
-        name: "Bagdja Software House",
+        name: "Bagdja Development",
         pill: "تطبيقات مخصصة × هندسة المنتجات × شريك تسليم",
         title: "ابنِ تطبيقات ويب وموبايل مخصصة مع Bagdja",
         subtitle: "نصمم ونبني ونصون تطبيقات مخصصة — من MVP إلى الإنتاج.",
@@ -712,6 +733,9 @@ const ar: Messages = {
     businessEyebrow: "05 — نموذج العمل",
     gtmEyebrow: "07 — الذهاب إلى السوق",
     gtmTitle: "من الصفر إلى نظام متكامل",
+    partnerEyebrow: "06 — شركاؤنا",
+    partnerTitle: "موثوق به من قبل الشركات الرائدة",
+    partnerSubtitle: "نعمل مع قادة الصناعة لتقديم نتائج استثنائية.",
     ctaTitle: "ابنِ منتجات، لا بنية تحتية.",
     ctaPrimary: "ابدأ المحادثة",
   },
@@ -780,7 +804,7 @@ const zh: Messages = {
       },
       {
         id: "software-house",
-        name: "Bagdja Software House",
+        name: "Bagdja Development",
         pill: "定制应用 × 产品工程 × 交付伙伴",
         title: "与 Bagdja 共建定制 Web 与移动应用",
         subtitle: "从 MVP 到正式上线：设计、开发与长期维护一站式交付。",
@@ -824,6 +848,9 @@ const zh: Messages = {
     businessEyebrow: "05 — 商业模式",
     gtmEyebrow: "07 — 增长策略",
     gtmTitle: "从 0 到生态系统",
+    partnerEyebrow: "06 — 我们的合作伙伴",
+    partnerTitle: "深受领先企业信赖",
+    partnerSubtitle: "我们与行业领导者合作，提供卓越成果。",
     ctaTitle: "做产品，不做基础设施。",
     ctaPrimary: "开始沟通",
   },
@@ -894,7 +921,7 @@ const es: Messages = {
       },
       {
         id: "software-house",
-        name: "Bagdja Software House",
+        name: "Bagdja Development",
         pill: "Apps a medida × Ingeniería de producto × Socio de entrega",
         title: "Crea apps web y móviles a medida con Bagdja",
         subtitle:
@@ -935,6 +962,10 @@ const es: Messages = {
     marketEyebrow: "04 — Oportunidad de Mercado",
     businessEyebrow: "05 — Modelo de Negocio",
     gtmEyebrow: "07 — Go-to-market",
+    gtmTitle: "De cero a ecosistema",
+    partnerEyebrow: "06 — Nuestros Socios",
+    partnerTitle: "Empresas líderes confían en nosotros",
+    partnerSubtitle: "Trabajamos con líderes de la industria para ofrecer resultados excepcionales.",
     ctaTitle: "Crea productos, no infraestructura.",
     ctaPrimary: "Iniciar conversación",
   },
