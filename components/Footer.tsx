@@ -6,7 +6,7 @@ export function Footer({ t }: { t: Messages }) {
     <footer className="border-t border-[var(--border-default)] bg-[var(--bg-section)]">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 sm:px-6 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-3">
-          <Image src="/logo.png" alt="Bagdja" width={92} height={28} />
+          <Image src="/logo-silver.png" alt="Bagdja" width={92} height={28} />
           <p className="text-sm text-[var(--text-secondary)]">
             {t.footer.tagline}
           </p>

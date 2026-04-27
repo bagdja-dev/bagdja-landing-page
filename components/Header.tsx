@@ -29,7 +29,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
     <header className="sticky top-0 z-50 border-b border-[var(--border-default)] bg-[color:rgba(26,29,33,0.8)] backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href={`/${locale}`} className="flex items-center gap-2">
-          <Image src="/logo.png" alt="Bagdja" width={92} height={28} priority />
+          <Image src="/logo-gold.png" alt="Bagdja" width={92} height={28} priority />
           <span className="sr-only">Bagdja</span>
         </Link>
 
