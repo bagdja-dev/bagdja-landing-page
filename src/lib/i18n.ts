@@ -142,7 +142,53 @@ export type Messages = {
       consultDesc: string;
       consultWhatsApp: string;
       consultEmail: string;
+      items: Array<{
+        id: string;
+        title: string;
+        description: string;
+        image: string;
+      }>;
     };
+    latestProjectEyebrow: string;
+    latestProjectTitle: string;
+    latestProjectSubtitle: string;
+    latestProjectSeeAll: string;
+    latestProjects: Array<{
+      id: string;
+      media: string;
+      mediaType: "image" | "video";
+      title: string;
+      description: string;
+      demoUrl?: string;
+      detailUrl?: string;
+      learnMoreUrl: string;
+    }>;
+    ourProductEyebrow: string;
+    ourProductTitle: string;
+    ourProductSubtitle: string;
+    ourProducts: Array<{
+      id: string;
+      name: string;
+      tagline: string;
+      description: string;
+      image: string;
+      link: string;
+    }>;
+    contactEyebrow: string;
+    contactTitle: string;
+    contactSubtitle: string;
+    contactFormName: string;
+    contactFormEmail: string;
+    contactFormMessage: string;
+    contactFormSendEmail: string;
+    contactFormSendWA: string;
+    contactLocations: Array<{
+      id: string;
+      name: string;
+      address: string;
+      lat: number;
+      lng: number;
+    }>;
     marketEyebrow: string;
     marketTitle: string;
     marketSubtitle: string;
@@ -208,6 +254,10 @@ const en: Messages = {
     platform: "Store",
     services: "Project",
     market: "Contact",
+    business: "Business",
+    gtm: "Go-to-market",
+    email: "Email",
+    whatsapp: "6285188448383",
   },
   hero: {
     pill: "App Store × Identity Platform × Monetization Layer",
@@ -378,7 +428,7 @@ const en: Messages = {
       saved: "Time saved vs in-house",
     },
     servicesEyebrow: "Services",
-    servicesTitle: "Bagdja can also be your execution partner",
+    servicesTitle: "Our Services",
     servicesSubtitle:
       "Beyond the platform, we help teams ship faster with end-to-end services: build, procurement, and partnerships.",
     services: {
@@ -405,7 +455,148 @@ const en: Messages = {
         "Share your requirements — we’ll recommend the best route: platform, services, or a combination.",
       consultWhatsApp: "WhatsApp",
       consultEmail: "Email",
+      items: [
+        {
+          id: "custom",
+          title: "Custom App Development",
+          description: "We design, build, and maintain custom applications for startups and teams — from MVP to production. Our team handles the full lifecycle from discovery to deployment.",
+          image: "/images/services/custom-dev.svg",
+        },
+        {
+          id: "procurement",
+          title: "Procurement & Integration",
+          description: "We help you procure software and solutions that fit your needs. From vendor selection to integration and rollout, we provide end-to-end support with documentation, training, and ongoing support.",
+          image: "/images/services/procurement.svg",
+        },
+        {
+          id: "partnership",
+          title: "Partnership & Collaboration",
+          description: "Build product and distribution collaboration, co-marketing and channel partnerships, and ecosystem integrations including API, SSO, and billing connections.",
+          image: "/images/services/partnership.svg",
+        },
+      ],
     },
+    latestProjectEyebrow: "07 — Our Work",
+    latestProjectTitle: "Latest Projects",
+    latestProjectSubtitle: "Explore our recent work and see how we've helped businesses grow.",
+    latestProjectSeeAll: "See All Projects",
+    latestProjects: [
+      {
+        id: "project-1",
+        media: "/images/projects/project-1.jpg",
+        mediaType: "image",
+        title: "E-Commerce Platform Redesign",
+        description: "A complete redesign of a major e-commerce platform focusing on user experience and conversion optimization.",
+        demoUrl: "#",
+        detailUrl: "#",
+        learnMoreUrl: "#",
+      },
+      {
+        id: "project-2",
+        media: "/images/projects/project-2.jpg",
+        mediaType: "image",
+        title: "Mobile Banking App",
+        description: "Secure and intuitive mobile banking application with biometric authentication and real-time notifications.",
+        demoUrl: "#",
+        learnMoreUrl: "#",
+      },
+      {
+        id: "project-3",
+        media: "/images/projects/project-3.jpg",
+        mediaType: "image",
+        title: "Healthcare Dashboard",
+        description: "Comprehensive dashboard for healthcare providers to monitor patient data and manage appointments.",
+        demoUrl: "#",
+        detailUrl: "#",
+        learnMoreUrl: "#",
+      },
+      {
+        id: "project-4",
+        media: "/images/projects/project-4.jpg",
+        mediaType: "image",
+        title: "AI Content Generator",
+        description: "AI-powered content generation platform for marketing teams to create engaging content at scale.",
+        learnMoreUrl: "#",
+      },
+    ],
+    ourProductEyebrow: "08 — Our Product",
+    ourProductTitle: "Powerful Products Built on Bagdja",
+    ourProductSubtitle:
+      "Discover our suite of products designed to help developers ship faster and users get a seamless experience.",
+    ourProducts: [
+      {
+        id: "auth-core",
+        name: "AuthCore",
+        tagline: "Enterprise-grade authentication made simple",
+        description: "SSO, social login, MFA, passwordless — everything you need for secure user authentication in one SDK.",
+        image: "/images/products/auth-core.jpg",
+        link: "#",
+      },
+      {
+        id: "billflow",
+        name: "BillFlow",
+        tagline: "Recurring billing without the complexity",
+        description: "Subscriptions, usage-based billing, tax compliance, and global payouts — all automated.",
+        image: "/images/products/billflow.jpg",
+        link: "#",
+      },
+      {
+        id: "storekit",
+        name: "StoreKit",
+        tagline: "Curated app marketplace in a box",
+        description: "App pages, SEO optimization, ratings, reviews, and intelligent recommendations for your products.",
+        image: "/images/products/storekit.jpg",
+        link: "#",
+      },
+      {
+        id: "insights",
+        name: "Insights",
+        tagline: "Unified analytics across your apps",
+        description: "Acquisition, engagement, revenue, and churn analytics in one dashboard.",
+        image: "/images/products/insights.jpg",
+        link: "#",
+      },
+      {
+        id: "sdk-connect",
+        name: "SDK Connect",
+        tagline: "One SDK, infinite possibilities",
+        description: "Connect all Bagdja products with a single integration point.",
+        image: "/images/products/sdk-connect.jpg",
+        link: "#",
+      },
+      {
+        id: "cloud-deploy",
+        name: "CloudDeploy",
+        tagline: "One-click deployment to global edge",
+        description: "Deploy your apps to our global network with automatic scaling and CDN.",
+        image: "/images/products/cloud-deploy.jpg",
+        link: "#",
+      },
+    ],
+    contactEyebrow: "09 — Contact Us",
+    contactTitle: "Let's Talk",
+    contactSubtitle: "Have a project in mind? We'd love to hear from you.",
+    contactFormName: "Your Name",
+    contactFormEmail: "Email Address",
+    contactFormMessage: "Tell us about your project...",
+    contactFormSendEmail: "Send Email",
+    contactFormSendWA: "Send WhatsApp",
+    contactLocations: [
+      {
+        id: "hq-jakarta",
+        name: "Jakarta HQ",
+        address: "Jl. Sudirman No. 123, Jakarta Selatan",
+        lat: -6.2088,
+        lng: 106.8456,
+      },
+      {
+        id: "office-bandung",
+        name: "Bandung Office",
+        address: "Jl. Asia Afrika No. 45, Bandung",
+        lat: -6.9175,
+        lng: 107.6191,
+      },
+    ],
     marketEyebrow: "04 — Market Opportunity",
     marketTitle: "A massive ecosystem waiting to be unified",
     marketSubtitle:
@@ -487,7 +678,6 @@ const en: Messages = {
       { name: "CloudBase", logo: "/images/partners/jamkrindo.webp" },
       { name: "DevStudio", logo: "/images/partners/yuanta.png" },
       { name: "DevStudio", logo: "/images/partners/sreeya.png" },
-      { name: "SecureNet", logo: "/images/partners/tam.png" },
       { name: "SecureNet", logo: "/images/partners/akasia.png" },
       { name: "TechCorp", logo: "/images/partners/enerren.png" },
     ],
@@ -612,14 +802,14 @@ const id: Messages = {
     platformTitle: "Dibuat untuk developer, dicintai pengguna",
     platformSubtitle:
       "Buat infrastruktur jadi tidak terlihat. Fokus ke produk, bukan plumbing.",
-    servicesTitle: "Bagdja juga hadir sebagai partner eksekusi",
+    servicesTitle: "Layanan Kami",
     servicesSubtitle:
       "Selain platform, kami bantu tim ship lebih cepat lewat layanan end-to-end: build, pengadaan, dan partnership.",
     marketTitle: "Ekosistem besar yang menunggu untuk dipersatukan",
     whyNowTitle: "Kenapa sekarang",
     gtmTitle: "Dari nol menjadi ekosistem",
     partnerEyebrow: "06 — Mitra Kami",
-    partnerTitle: "Dipercaya oleh perusahaan terkemuka",
+    partnerTitle: "Partner Kami",
     partnerSubtitle: "Kami bekerja dengan pemimpin industri untuk memberikan hasil luar biasa.",
     ctaTitle: "Bangun produk, bukan infrastruktur.",
     ctaPrimary: "Mulai diskusi",
@@ -730,6 +920,23 @@ const ar: Messages = {
       "إلى جانب المنصة، نساعد الفرق على الإطلاق أسرع عبر خدمات شاملة: البناء، الشراء، والشراكات.",
     marketEyebrow: "04 — فرصة السوق",
     marketTitle: "نظام ضخم ينتظر التوحيد",
+    contactEyebrow: "09 — تواصل معنا",
+    contactTitle: "لنتحدث",
+    contactSubtitle: "هل لديك مشروع في ذهنك؟ نود أن نسمع منك.",
+    contactFormName: "اسمك",
+    contactFormEmail: "البريد الإلكتروني",
+    contactFormMessage: "أخبرنا عن مشروعك...",
+    contactFormSendEmail: "إرسال بريد",
+    contactFormSendWA: "إرسال واتساب",
+    contactLocations: [
+      {
+        id: "hq-jakarta",
+        name: "جاكارتا HQ",
+        address: "Jl. Sudirman No. 123, Jakarta Selatan",
+        lat: -6.2088,
+        lng: 106.8456,
+      },
+    ],
     businessEyebrow: "05 — نموذج العمل",
     gtmEyebrow: "07 — الذهاب إلى السوق",
     gtmTitle: "من الصفر إلى نظام متكامل",
@@ -845,6 +1052,23 @@ const zh: Messages = {
       "除了平台，我们也提供端到端服务：定制开发、采购落地与合作伙伴关系。",
     marketEyebrow: "04 — 市场机会",
     marketTitle: "一个等待被统一的巨大生态",
+    contactEyebrow: "09 — 联系我们",
+    contactTitle: "让我们聊聊",
+    contactSubtitle: "有项目想聊？我们很乐意听取您的意见。",
+    contactFormName: "您的姓名",
+    contactFormEmail: "电子邮件",
+    contactFormMessage: "请告诉我们您的项目...",
+    contactFormSendEmail: "发送邮件",
+    contactFormSendWA: "发送微信",
+    contactLocations: [
+      {
+        id: "hq-jakarta",
+        name: "雅加达总部",
+        address: "Jl. Sudirman No. 123, Jakarta Selatan",
+        lat: -6.2088,
+        lng: 106.8456,
+      },
+    ],
     businessEyebrow: "05 — 商业模式",
     gtmEyebrow: "07 — 增长策略",
     gtmTitle: "从 0 到生态系统",
@@ -960,6 +1184,23 @@ const es: Messages = {
     servicesSubtitle:
       "Además de la plataforma, ayudamos a equipos a lanzar más rápido con servicios end-to-end: desarrollo, procurement y partnerships.",
     marketEyebrow: "04 — Oportunidad de Mercado",
+    contactEyebrow: "09 — Contáctenos",
+    contactTitle: "Hablemos",
+    contactSubtitle: "¿Tienes un proyecto en mente? Nos encantaría saber de ti.",
+    contactFormName: "Tu nombre",
+    contactFormEmail: "Correo electrónico",
+    contactFormMessage: "Cuéntanos sobre tu proyecto...",
+    contactFormSendEmail: "Enviar correo",
+    contactFormSendWA: "Enviar WhatsApp",
+    contactLocations: [
+      {
+        id: "hq-jakarta",
+        name: "Yakarta HQ",
+        address: "Jl. Sudirman No. 123, Jakarta Selatan",
+        lat: -6.2088,
+        lng: 106.8456,
+      },
+    ],
     businessEyebrow: "05 — Modelo de Negocio",
     gtmEyebrow: "07 — Go-to-market",
     gtmTitle: "De cero a ecosistema",
