@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
   ChevronLeft,
@@ -15,8 +16,9 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { getDirection, type Locale, type Messages } from "@/src/lib/i18n";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { fetchProjects, type ProjectAPIResponse } from "@/src/lib/projects";
 
 function Section({
   id,
@@ -130,9 +132,9 @@ function PartnerSection({
             className="flex gap-6 overflow-x-auto scrollbar-hide pb-4 pt-2"
             style={{ scrollBehavior: "smooth" }}
           >
-            {partners.map((partner) => (
+            {partners.map((partner, index) => (
               <div
-                key={partner.name}
+                key={`${partner.name}-${index}`}
                 className="flex h-24 w-40 flex-shrink-0 items-center justify-center rounded-xl px-2 "
               >
                 <div className="flex items-center gap-2 flex-col">
@@ -272,6 +274,8 @@ function LatestProjectSection({
     demoUrl?: string;
     detailUrl?: string;
     learnMoreUrl: string;
+    projectUrl?: string;
+    blogUrl?: string;
   }>;
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -313,7 +317,7 @@ function LatestProjectSection({
             </div>
             {seeAll ? (
               <a
-                href="#"
+                href={`${process.env.NEXT_PUBLIC_PROJECT_BASE_URL}/digital`}
                 className="inline-flex items-center gap-2 rounded-lg border border-[var(--border-default)] bg-[var(--bg-main)] px-4 py-2 text-sm font-medium text-[var(--text-primary)] transition-colors hover:bg-[var(--bg-section)] hover:border-[var(--color-accent)]"
               >
                 {seeAll}
@@ -375,31 +379,14 @@ function LatestProjectSection({
                     <p className="text-sm leading-5 text-[var(--text-secondary)] line-clamp-3">
                       {item.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {item.demoUrl && (
-                        <a
-                          href={item.demoUrl}
-                          className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--color-accent)] px-3 py-2 text-xs font-medium text-white transition-colors hover:bg-[var(--color-accent)]/90"
-                        >
-                          <span>Demo</span>
-                          <ArrowRight className="h-3 w-3" />
-                        </a>
-                      )}
-                      {item.detailUrl && (
-                        <a
-                          href={item.detailUrl}
-                          className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border-default)] bg-[var(--bg-main)] px-3 py-2 text-xs font-medium text-[var(--text-primary)] transition-colors hover:bg-[var(--bg-section)]"
-                        >
-                          Detail
-                        </a>
-                      )}
-                      <a
-                        href={item.learnMoreUrl}
+                    <div className="flex flex-wrap gap-2 mt-2 justify-end">
+                      <Link
+                        href={`${process.env.NEXT_PUBLIC_PROJECT_BASE_URL}${item.learnMoreUrl}`}
                         className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)] underline-offset-2 hover:underline"
                       >
                         Pelajari lebih lanjut
                         <ArrowRight className="h-3 w-3" />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -676,8 +663,54 @@ function ContactSection({
   );
 }
 
-export function LandingPage({ locale, t }: { locale: Locale; t: Messages }) {
+export function LandingPage({ 
+  locale, 
+  t,
+  initialProjects = []
+}: { 
+  locale: Locale; 
+  t: Messages;
+  initialProjects?: ProjectAPIResponse['data'];
+}) {
   const dir = getDirection(locale);
+  const [projects, setProjects] = useState(initialProjects);
+
+  useEffect(() => {
+    if (initialProjects && initialProjects.length > 0) {
+      setProjects(initialProjects);
+    } else {
+      // If no initial projects, try to fetch client-side as fallback
+      const loadProjects = async () => {
+        const data = await fetchProjects();
+        if (data && data.length > 0) {
+          setProjects(data);
+        }
+      };
+      loadProjects();
+    }
+  }, [initialProjects]);
+
+  // Latest Projects from API
+   const displayLatestProjects = projects && projects.length > 0
+     ? projects.map(p => ({
+         id: p.id,
+         media: p.image || "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop",
+         mediaType: "image" as const,
+         title: p.title || "Untitled",
+         description: p.excerpt || "",
+         demoUrl: p.demo_url,
+         detailUrl: p.project_url || (p as any).projectUrl || (p.slug ? `/digital/projects/${p.slug}` : "#"),
+         learnMoreUrl: p.project_url || (p as any).projectUrl || (p.slug ? `/digital/projects/${p.slug}` : "#"),
+         projectUrl: p.project_url || (p as any).projectUrl,
+         blogUrl: p.blog_url || (p as any).blogUrl
+       }))
+     : [];
+
+   // Our Products always from i18n
+   const displayProducts = t.sections.ourProducts.map(p => ({
+     ...p,
+     image: p.image.startsWith("/images/projects/") ? "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop" : p.image
+   }));
 
   return (
     <div className="min-h-screen bg-[var(--bg-main)]" lang={locale} dir={dir}>
@@ -693,6 +726,7 @@ export function LandingPage({ locale, t }: { locale: Locale; t: Messages }) {
           partners={t.sections.partners}
         />
 
+        <div id="service" />
         <ServiceSection
           eyebrow={t.sections.servicesEyebrow}
           title={t.sections.servicesTitle}
@@ -700,21 +734,24 @@ export function LandingPage({ locale, t }: { locale: Locale; t: Messages }) {
           items={t.sections.services.items}
         />
 
+        <div id="project" />
         <LatestProjectSection
           eyebrow={t.sections.latestProjectEyebrow}
           title={t.sections.latestProjectTitle}
           subtitle={t.sections.latestProjectSubtitle}
           seeAll={t.sections.latestProjectSeeAll}
-          items={t.sections.latestProjects}
+          items={displayLatestProjects}
         />
 
+        <div id="product" />
         <OurProductSection
           eyebrow={t.sections.ourProductEyebrow}
           title={t.sections.ourProductTitle}
           subtitle={t.sections.ourProductSubtitle}
-          items={t.sections.ourProducts}
+          items={displayProducts}
         />
 
+        <div id="contact" />
         <ContactSection
           eyebrow={t.sections.contactEyebrow}
           title={t.sections.contactTitle}

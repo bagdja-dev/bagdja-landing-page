@@ -21,12 +21,14 @@ export function getDirection(locale: Locale): "ltr" | "rtl" {
 
 export type Messages = {
   nav: {
-    problem: string;
-    solution: string;
     platform: string;
-    services: string;
-    market: string;
-    business: string;
+    development: string;
+    service: string;
+    project: string;
+    product: string;
+    contact: string;
+    store: string;
+    course: string;
     gtm: string;
     email: string;
     whatsapp: string;
@@ -249,12 +251,14 @@ export type Messages = {
 
 const en: Messages = {
   nav: {
-    problem: "Platform",
-    solution: "Development",
-    platform: "Store",
-    services: "Project",
-    market: "Contact",
-    business: "Business",
+    platform: "Platform",
+    development: "Development",
+    service: "Service",
+    project: "Project",
+    product: "Product",
+    contact: "Contact",
+    store: "Store",
+    course: "Course",
     gtm: "Go-to-market",
     email: "Email",
     whatsapp: "6285188448383",
@@ -525,52 +529,12 @@ const en: Messages = {
       "Discover our suite of products designed to help developers ship faster and users get a seamless experience.",
     ourProducts: [
       {
-        id: "auth-core",
-        name: "AuthCore",
-        tagline: "Enterprise-grade authentication made simple",
-        description: "SSO, social login, MFA, passwordless — everything you need for secure user authentication in one SDK.",
-        image: "/images/products/auth-core.jpg",
-        link: "#",
-      },
-      {
-        id: "billflow",
-        name: "BillFlow",
-        tagline: "Recurring billing without the complexity",
-        description: "Subscriptions, usage-based billing, tax compliance, and global payouts — all automated.",
-        image: "/images/products/billflow.jpg",
-        link: "#",
-      },
-      {
-        id: "storekit",
-        name: "StoreKit",
-        tagline: "Curated app marketplace in a box",
-        description: "App pages, SEO optimization, ratings, reviews, and intelligent recommendations for your products.",
-        image: "/images/products/storekit.jpg",
-        link: "#",
-      },
-      {
-        id: "insights",
-        name: "Insights",
-        tagline: "Unified analytics across your apps",
-        description: "Acquisition, engagement, revenue, and churn analytics in one dashboard.",
-        image: "/images/products/insights.jpg",
-        link: "#",
-      },
-      {
-        id: "sdk-connect",
-        name: "SDK Connect",
-        tagline: "One SDK, infinite possibilities",
-        description: "Connect all Bagdja products with a single integration point.",
-        image: "/images/products/sdk-connect.jpg",
-        link: "#",
-      },
-      {
-        id: "cloud-deploy",
-        name: "CloudDeploy",
-        tagline: "One-click deployment to global edge",
-        description: "Deploy your apps to our global network with automatic scaling and CDN.",
-        image: "/images/products/cloud-deploy.jpg",
-        link: "#",
+        id: "porto",
+        name: "Porto",
+        tagline: "Your Digital Face in One Elegant Page",
+        description: "Showcase your work, products, and professional identity in one elegant page. Bagdja Porto makes it easy for anyone to build a credible, organized digital presence, ready to share with the world in just minutes.",
+        image: "https://jivyvnhqoegiiyodmdnc.supabase.co/storage/v1/object/public/assets/organizations/d38fd14f-d625-4849-bb09-1821d3700691/APP%20Icon/1777329662034-78f45d93-porto_ilustration.png",
+        link: "http://localhost:5173",
       },
     ],
     contactEyebrow: "09 — Contact Us",
@@ -696,15 +660,17 @@ const en: Messages = {
 const id: Messages = {
   ...en,
   nav: {
-    problem: "Masalah",
-    solution: "Solusi",
     platform: "Platform",
-    services: "Layanan",
-    market: "Pasar",
-    business: "Bisnis",
+    development: "Development",
+    service: "Service",
+    project: "Project",
+    product: "Product",
+    contact: "Contact",
+    store: "Store",
+    course: "Course",
     gtm: "Go-to-market",
     email: "Email",
-    whatsapp: "WhatsApp",
+    whatsapp: "6285188448383",
   },
   hero: {
     ...en.hero,
@@ -844,6 +810,16 @@ const id: Messages = {
     ourProductEyebrow: "08 — Produk Kami",
     ourProductTitle: "Produk Unggulan di Atas Bagdja",
     ourProductSubtitle: "Temukan rangkaian produk yang dirancang untuk membantu developer ship lebih cepat.",
+    ourProducts: [
+      {
+        id: "porto",
+        name: "Porto",
+        tagline: "Wajah Digitalmu dalam Satu Halaman Elegan.",
+        description: "Tampilkan karya, produk, dan identitas profesional Anda dalam satu halaman yang elegan. Bagdja Porto memudahkan siapa saja membangun eksistensi digital yang kredibel, terorganisir, dan siap dibagikan ke seluruh dunia hanya dalam hitungan menit",
+        image: "https://jivyvnhqoegiiyodmdnc.supabase.co/storage/v1/object/public/assets/organizations/d38fd14f-d625-4849-bb09-1821d3700691/APP%20Icon/1777329662034-78f45d93-porto_ilustration.png",
+        link: "http://localhost:5173",
+      },
+    ],
   },
   footer: {
     ...en.footer,
@@ -854,15 +830,17 @@ const id: Messages = {
 const ar: Messages = {
   ...en,
   nav: {
-    problem: "المشكلة",
-    solution: "الحل",
     platform: "المنصة",
-    services: "الخدمات",
-    market: "السوق",
-    business: "نموذج العمل",
+    development: en.nav.development,
+    service: "الخدمات",
+    project: en.nav.project,
+    product: en.nav.product,
+    contact: en.nav.contact,
+    store: en.nav.store,
+    course: en.nav.course,
     gtm: "الذهاب إلى السوق",
     email: "البريد",
-    whatsapp: "واتساب",
+    whatsapp: "6285188448383",
   },
   hero: {
     ...en.hero,
@@ -1002,15 +980,17 @@ const ar: Messages = {
 const zh: Messages = {
   ...en,
   nav: {
-    problem: "痛点",
-    solution: "方案",
     platform: "平台",
-    services: "服务",
-    market: "市场",
-    business: "商业模式",
+    development: en.nav.development,
+    service: "服务",
+    project: en.nav.project,
+    product: en.nav.product,
+    contact: en.nav.contact,
+    store: en.nav.store,
+    course: en.nav.course,
     gtm: "增长策略",
     email: "邮箱",
-    whatsapp: "WhatsApp",
+    whatsapp: "6285188448383",
   },
   hero: {
     ...en.hero,
@@ -1146,15 +1126,17 @@ const zh: Messages = {
 const es: Messages = {
   ...en,
   nav: {
-    problem: "Problema",
-    solution: "Solución",
     platform: "Plataforma",
-    services: "Servicios",
-    market: "Mercado",
-    business: "Negocio",
+    development: en.nav.development,
+    service: "Servicios",
+    project: en.nav.project,
+    product: en.nav.product,
+    contact: en.nav.contact,
+    store: en.nav.store,
+    course: en.nav.course,
     gtm: "Go-to-market",
     email: "Email",
-    whatsapp: "WhatsApp",
+    whatsapp: "6285188448383",
   },
   hero: {
     ...en.hero,
