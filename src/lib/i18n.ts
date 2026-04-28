@@ -534,7 +534,7 @@ const en: Messages = {
         tagline: "Your Digital Face in One Elegant Page",
         description: "Showcase your work, products, and professional identity in one elegant page. Bagdja Porto makes it easy for anyone to build a credible, organized digital presence, ready to share with the world in just minutes.",
         image: "https://jivyvnhqoegiiyodmdnc.supabase.co/storage/v1/object/public/assets/organizations/d38fd14f-d625-4849-bb09-1821d3700691/APP%20Icon/1777329662034-78f45d93-porto_ilustration.png",
-        link: "http://localhost:5173",
+        link: "https://porto.bagdja.com/",
       },
     ],
     contactEyebrow: "09 — Contact Us",
