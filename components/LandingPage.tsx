@@ -186,7 +186,7 @@ function ServiceSection({
     <section id="services" className="scroll-mt-24 border-t border-[var(--border-default)]">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <div className="mb-10 max-w-full">
-    
+
           <h2 className="text-2xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-3xl justify-center align-middle flex">
             {title}
           </h2>
@@ -534,11 +534,11 @@ function ContactSection({
           {/* Left Side: Map Visualizer */}
           <div className="relative aspect-square sm:aspect-video lg:aspect-square w-full rounded-2xl border border-[var(--border-default)] bg-[var(--bg-section)] overflow-hidden">
             {/* Simple Map Background Grid */}
-            <div className="absolute inset-0 opacity-10" style={{ 
-              backgroundImage: 'radial-gradient(circle, var(--text-secondary) 1px, transparent 1px)', 
-              backgroundSize: '24px 24px' 
+            <div className="absolute inset-0 opacity-10" style={{
+              backgroundImage: 'radial-gradient(circle, var(--text-secondary) 1px, transparent 1px)',
+              backgroundSize: '24px 24px'
             }} />
-            
+
             {/* Markers Container */}
             <div className="absolute inset-0 flex items-center justify-center">
               {/* This is a visual representation since we don't have a map provider API key */}
@@ -547,7 +547,7 @@ function ContactSection({
                   // Pseudo-random but deterministic positions based on lat/lng for visualization
                   const x = ((loc.lng - 106) * 100) % 80 + 10;
                   const y = ((loc.lat + 7) * 100) % 80 + 10;
-                  
+
                   return (
                     <motion.button
                       key={loc.id}
@@ -558,13 +558,12 @@ function ContactSection({
                       className="absolute group"
                       style={{ left: `${x}%`, top: `${y}%` }}
                     >
-                      <div className={`relative flex items-center justify-center p-2 rounded-full border transition-all ${
-                        selectedLocation.id === loc.id 
-                        ? 'bg-[var(--color-accent)] border-[var(--color-accent)] text-white scale-125 z-10' 
-                        : 'bg-[var(--bg-main)] border-[var(--border-default)] text-[var(--text-secondary)] hover:border-[var(--color-accent)]'
-                      }`}>
+                      <div className={`relative flex items-center justify-center p-2 rounded-full border transition-all ${selectedLocation.id === loc.id
+                          ? 'bg-[var(--color-accent)] border-[var(--color-accent)] text-white scale-125 z-10'
+                          : 'bg-[var(--bg-main)] border-[var(--border-default)] text-[var(--text-secondary)] hover:border-[var(--color-accent)]'
+                        }`}>
                         <MapPin className="h-5 w-5" />
-                        
+
                         {/* Tooltip */}
                         <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-[200px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity z-20">
                           <div className="bg-[var(--bg-main)] border border-[var(--border-default)] rounded-lg p-2 shadow-xl text-xs">
@@ -581,7 +580,7 @@ function ContactSection({
                 <div className="absolute bottom-6 left-6 right-6 md:left-auto md:w-64 bg-[var(--bg-main)] border border-[var(--border-default)] rounded-xl p-4 shadow-2xl">
                   <h4 className="font-semibold text-[var(--text-primary)] text-sm mb-1">{selectedLocation.name}</h4>
                   <p className="text-[var(--text-secondary)] text-xs mb-3">{selectedLocation.address}</p>
-                  <a 
+                  <a
                     href={`https://www.google.com/maps/search/?api=1&query=${selectedLocation.lat},${selectedLocation.lng}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -600,30 +599,30 @@ function ContactSection({
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div>
                   <label className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">{formName}</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     className="w-full rounded-lg border border-[var(--border-default)] bg-[var(--bg-main)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">{formEmail}</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     className="w-full rounded-lg border border-[var(--border-default)] bg-[var(--bg-main)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors"
                     placeholder="john@example.com"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">{formMessage}</label>
-                  <textarea 
+                  <textarea
                     rows={4}
                     className="w-full rounded-lg border border-[var(--border-default)] bg-[var(--bg-main)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors resize-none"
                     placeholder="I'm interested in..."
                   />
                 </div>
-                
-                <button 
+
+                <button
                   type="submit"
                   className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.98]"
                 >
@@ -635,7 +634,7 @@ function ContactSection({
 
             {/* Contact Buttons Row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <a 
+              <a
                 href="mailto:contact@bagdja.com"
                 className="flex items-center justify-center gap-3 rounded-xl border border-[var(--border-default)] bg-[var(--bg-section)] p-4 text-sm font-medium text-[var(--text-primary)] transition-all hover:border-[var(--color-accent)] hover:shadow-lg group"
               >
@@ -644,7 +643,7 @@ function ContactSection({
                 </div>
                 {sendEmailLabel}
               </a>
-              <a 
+              <a
                 href="https://wa.me/6285188448383"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -663,12 +662,12 @@ function ContactSection({
   );
 }
 
-export function LandingPage({ 
-  locale, 
+export function LandingPage({
+  locale,
   t,
   initialProjects = []
-}: { 
-  locale: Locale; 
+}: {
+  locale: Locale;
   t: Messages;
   initialProjects?: ProjectAPIResponse['data'];
 }) {
@@ -691,26 +690,26 @@ export function LandingPage({
   }, [initialProjects]);
 
   // Latest Projects from API
-   const displayLatestProjects = projects && projects.length > 0
-     ? projects.map(p => ({
-         id: p.id,
-         media: p.image || "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop",
-         mediaType: "image" as const,
-         title: p.title || "Untitled",
-         description: p.excerpt || "",
-         demoUrl: p.demo_url,
-         detailUrl: p.project_url || (p as any).projectUrl || (p.slug ? `/digital/projects/${p.slug}` : "#"),
-         learnMoreUrl: p.project_url || (p as any).projectUrl || (p.slug ? `/digital/projects/${p.slug}` : "#"),
-         projectUrl: p.project_url || (p as any).projectUrl,
-         blogUrl: p.blog_url || (p as any).blogUrl
-       }))
-     : [];
+  const displayLatestProjects = projects && projects.length > 0
+    ? projects.map(p => ({
+      id: p.id,
+      media: p.image || "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop",
+      mediaType: "image" as const,
+      title: p.title || "Untitled",
+      description: p.excerpt || "",
+      demoUrl: p.demo_url,
+      detailUrl: p.project_url || (p as any).projectUrl || (p.slug ? `/dev/projects/${p.slug}` : "#"),
+      learnMoreUrl: p.project_url || (p as any).projectUrl || (p.slug ? `/dev/projects/${p.slug}` : "#"),
+      projectUrl: p.project_url || (p as any).projectUrl,
+      blogUrl: p.blog_url || (p as any).blogUrl
+    }))
+    : [];
 
-   // Our Products always from i18n
-   const displayProducts = t.sections.ourProducts.map(p => ({
-     ...p,
-     image: p.image.startsWith("/images/projects/") ? "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop" : p.image
-   }));
+  // Our Products always from i18n
+  const displayProducts = t.sections.ourProducts.map(p => ({
+    ...p,
+    image: p.image.startsWith("/images/projects/") ? "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop" : p.image
+  }));
 
   return (
     <div className="min-h-screen bg-[var(--bg-main)]" lang={locale} dir={dir}>
