@@ -26,6 +26,9 @@ export function Footer({ t }: { t: Messages }) {
           <span className="text-xs text-[color:rgba(136,150,164,0.85)]">
             © {new Date().getFullYear()} Bagdja. {t.footer.rights}
           </span>
+          <span className="text-xs text-[color:rgba(136,150,164,0.85)]">
+            {t.footer.legalEntity}
+          </span>
         </div>
       </div>
     </footer>

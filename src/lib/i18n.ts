@@ -246,6 +246,7 @@ export type Messages = {
     tagline: string;
     rights: string;
     whatsappLabel: string;
+    legalEntity: string;
   };
 };
 
@@ -526,7 +527,7 @@ const en: Messages = {
     ourProductEyebrow: "08 — Our Product",
     ourProductTitle: "Powerful Products Built on Bagdja",
     ourProductSubtitle:
-      "Discover our suite of products designed to help developers ship faster and users get a seamless experience.",
+      "Explore products built by developers on top of the Bagdja platform, designed to meet user needs with a seamless experience.",
     ourProducts: [
       {
         id: "porto",
@@ -535,6 +536,22 @@ const en: Messages = {
         description: "Showcase your work, products, and professional identity in one elegant page. Bagdja Porto makes it easy for anyone to build a credible, organized digital presence, ready to share with the world in just minutes.",
         image: "https://jivyvnhqoegiiyodmdnc.supabase.co/storage/v1/object/public/assets/organizations/d38fd14f-d625-4849-bb09-1821d3700691/APP%20Icon/1777329662034-78f45d93-porto_ilustration.png",
         link: "https://porto.bagdja.com/",
+      },
+      {
+        id: "pos",
+        name: "POS",
+        tagline: "Multi-tenant POS for Your Business",
+        description: "Replace manual ledger books with a digital point-of-sale system. Manage purchase and sales invoices, inter-branch stock transfers, and accounts payable/receivable in one app — built for workshops and retail stores.",
+        image: "https://jivyvnhqoegiiyodmdnc.supabase.co/storage/v1/object/public/assets/organizations/bagdja-dev/Product%20Sample/1784064838531-78e37dca-pos.png",
+        link: "https://pos.bagdja.com/",
+      },
+      {
+        id: "website",
+        name: "Website",
+        tagline: "Multi-tenant Professional Website for Your Business",
+        description: "Build a professional website in minutes. No coding, no hassle — choose a template, add your content, and your website goes live instantly. Focus on your business, we'll handle the technology.",
+        image: "https://jivyvnhqoegiiyodmdnc.supabase.co/storage/v1/object/public/assets/organizations/bagdja-dev/Product%20Sample/1784065629822-313f23cd-website.png",
+        link: "https://website.bagdja.com/",
       },
     ],
     contactEyebrow: "09 — Contact Us",
@@ -654,6 +671,8 @@ const en: Messages = {
     tagline: "Store × Identity × Monetize — in one integrated platform.",
     rights: "All rights reserved.",
     whatsappLabel: "WhatsApp:",
+    legalEntity:
+      "Bagdja is a trademark of PT. Cakra Indo Amerta, headquartered in Garut, West Java, Indonesia.",
   },
 };
 
@@ -809,7 +828,7 @@ const id: Messages = {
     latestProjectSeeAll: "Lihat Semua Proyek",
     ourProductEyebrow: "08 — Produk Kami",
     ourProductTitle: "Produk Unggulan di Atas Bagdja",
-    ourProductSubtitle: "Temukan rangkaian produk yang dirancang untuk membantu developer ship lebih cepat.",
+    ourProductSubtitle: "Jelajahi produk yang dibangun oleh pengembang di atas platform Bagdja, dirancang untuk memenuhi kebutuhan pengguna dengan pengalaman yang mulus.",
     ourProducts: [
       {
         id: "porto",
@@ -819,11 +838,29 @@ const id: Messages = {
         image: "https://jivyvnhqoegiiyodmdnc.supabase.co/storage/v1/object/public/assets/organizations/d38fd14f-d625-4849-bb09-1821d3700691/APP%20Icon/1777329662034-78f45d93-porto_ilustration.png",
         link: "http://localhost:5173",
       },
+      {
+        id: "pos",
+        name: "POS",
+        tagline: "POS Multi-Tenant untuk Bisnis Anda",
+        description: "Ganti buku bon manual dengan sistem kasir digital. Kelola faktur jual-beli, mutasi stok antar cabang, dan kartu piutang-hutang dalam satu aplikasi — dirancang untuk bengkel dan toko retail.",
+        image: "https://jivyvnhqoegiiyodmdnc.supabase.co/storage/v1/object/public/assets/organizations/bagdja-dev/Product%20Sample/1784064838531-78e37dca-pos.png",
+        link: "https://pos.bagdja.com/",
+      },
+      {
+        id: "website",
+        name: "Website",
+        tagline: "Website Profesional Multi-Tenant untuk Bisnis Anda",
+        description: "Buat website profesional dalam hitungan menit. Tanpa coding, tanpa ribet. Pilih template, isi konten, website Anda langsung online. Fokus pada bisnis — biar kami urus teknologinya.",
+        image: "https://jivyvnhqoegiiyodmdnc.supabase.co/storage/v1/object/public/assets/organizations/bagdja-dev/Product%20Sample/1784065629822-313f23cd-website.png",
+        link: "https://website.bagdja.com/",
+      },
     ],
   },
   footer: {
     ...en.footer,
     tagline: "Store × Identity × Monetize — dalam satu platform terintegrasi.",
+    legalEntity:
+      "Bagdja adalah merek dagang dari PT. Cakra Indo Amerta, berkantor pusat di Garut, Jawa Barat, Indonesia.",
   },
 };
 
@@ -974,6 +1011,8 @@ const ar: Messages = {
     tagline: "Store × Identity × Monetize — ضمن منصة واحدة متكاملة.",
     rights: "جميع الحقوق محفوظة.",
     whatsappLabel: "واتساب:",
+    legalEntity:
+      "Bagdja علامة تجارية مملوكة لشركة PT. Cakra Indo Amerta، ومقرها الرئيسي في غاروت، جاوة الغربية، إندونيسيا.",
   },
 };
 
@@ -1120,6 +1159,8 @@ const zh: Messages = {
   footer: {
     ...en.footer,
     tagline: "Store × Identity × Monetize — 一体化平台。",
+    legalEntity:
+      "Bagdja 是 PT. Cakra Indo Amerta 旗下的商标，总部位于印度尼西亚西爪哇省加鲁特（Garut）。",
   },
 };
 
@@ -1268,6 +1309,8 @@ const es: Messages = {
   footer: {
     ...en.footer,
     tagline: "Store × Identity × Monetize — en una plataforma integrada.",
+    legalEntity:
+      "Bagdja es una marca registrada de PT. Cakra Indo Amerta, con sede central en Garut, Java Occidental, Indonesia.",
   },
 };
 

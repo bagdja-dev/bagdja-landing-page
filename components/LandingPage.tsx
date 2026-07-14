@@ -8,8 +8,6 @@ import {
   ChevronRight,
   Mail,
   MessageCircle,
-  MapPin,
-  Send,
   Phone,
 } from "lucide-react";
 import { Header } from "@/components/Header";
@@ -486,31 +484,15 @@ function ContactSection({
   eyebrow,
   title,
   subtitle,
-  formName,
-  formEmail,
-  formMessage,
   sendEmailLabel,
   sendWALabel,
-  locations,
 }: {
   eyebrow?: string;
   title: string;
   subtitle?: string;
-  formName: string;
-  formEmail: string;
-  formMessage: string;
   sendEmailLabel: string;
   sendWALabel: string;
-  locations: Array<{
-    id: string;
-    name: string;
-    address: string;
-    lat: number;
-    lng: number;
-  }>;
 }) {
-  const [selectedLocation, setSelectedLocation] = useState(locations[0]);
-
   return (
     <section id="contact" className="scroll-mt-24 border-t border-[var(--border-default)]">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
@@ -530,132 +512,27 @@ function ContactSection({
           ) : null}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left Side: Map Visualizer */}
-          <div className="relative aspect-square sm:aspect-video lg:aspect-square w-full rounded-2xl border border-[var(--border-default)] bg-[var(--bg-section)] overflow-hidden">
-            {/* Simple Map Background Grid */}
-            <div className="absolute inset-0 opacity-10" style={{
-              backgroundImage: 'radial-gradient(circle, var(--text-secondary) 1px, transparent 1px)',
-              backgroundSize: '24px 24px'
-            }} />
-
-            {/* Markers Container */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              {/* This is a visual representation since we don't have a map provider API key */}
-              <div className="relative w-full h-full p-8">
-                {locations.map((loc, idx) => {
-                  // Pseudo-random but deterministic positions based on lat/lng for visualization
-                  const x = ((loc.lng - 106) * 100) % 80 + 10;
-                  const y = ((loc.lat + 7) * 100) % 80 + 10;
-
-                  return (
-                    <motion.button
-                      key={loc.id}
-                      initial={{ scale: 0, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: idx * 0.2 }}
-                      onClick={() => setSelectedLocation(loc)}
-                      className="absolute group"
-                      style={{ left: `${x}%`, top: `${y}%` }}
-                    >
-                      <div className={`relative flex items-center justify-center p-2 rounded-full border transition-all ${selectedLocation.id === loc.id
-                          ? 'bg-[var(--color-accent)] border-[var(--color-accent)] text-white scale-125 z-10'
-                          : 'bg-[var(--bg-main)] border-[var(--border-default)] text-[var(--text-secondary)] hover:border-[var(--color-accent)]'
-                        }`}>
-                        <MapPin className="h-5 w-5" />
-
-                        {/* Tooltip */}
-                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-[200px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity z-20">
-                          <div className="bg-[var(--bg-main)] border border-[var(--border-default)] rounded-lg p-2 shadow-xl text-xs">
-                            <p className="font-bold text-[var(--text-primary)]">{loc.name}</p>
-                            <p className="text-[var(--text-secondary)] mt-1">{loc.address}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.button>
-                  );
-                })}
-
-                {/* Info Card Overlay for Selected Location */}
-                <div className="absolute bottom-6 left-6 right-6 md:left-auto md:w-64 bg-[var(--bg-main)] border border-[var(--border-default)] rounded-xl p-4 shadow-2xl">
-                  <h4 className="font-semibold text-[var(--text-primary)] text-sm mb-1">{selectedLocation.name}</h4>
-                  <p className="text-[var(--text-secondary)] text-xs mb-3">{selectedLocation.address}</p>
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${selectedLocation.lat},${selectedLocation.lng}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[var(--color-accent)] text-xs font-medium flex items-center gap-1 hover:underline"
-                  >
-                    Open in Maps <ArrowRight className="h-3 w-3" />
-                  </a>
-                </div>
-              </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a
+            href="mailto:contact@bagdja.com"
+            className="flex items-center justify-center gap-3 rounded-xl border border-[var(--border-default)] bg-[var(--bg-section)] p-4 text-sm font-medium text-[var(--text-primary)] transition-all hover:border-[var(--color-accent)] hover:shadow-lg group"
+          >
+            <div className="p-2 rounded-lg bg-[color:rgba(92,126,154,0.12)] text-[var(--color-accent)] group-hover:bg-[var(--color-accent)] group-hover:text-white transition-colors">
+              <Mail className="h-5 w-5" />
             </div>
-          </div>
-
-          {/* Right Side: Form */}
-          <div className="flex flex-col gap-8">
-            <div className="rounded-2xl border border-[var(--border-default)] bg-[var(--bg-section)] p-6 sm:p-8">
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <div>
-                  <label className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">{formName}</label>
-                  <input
-                    type="text"
-                    className="w-full rounded-lg border border-[var(--border-default)] bg-[var(--bg-main)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">{formEmail}</label>
-                  <input
-                    type="email"
-                    className="w-full rounded-lg border border-[var(--border-default)] bg-[var(--bg-main)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors"
-                    placeholder="john@example.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">{formMessage}</label>
-                  <textarea
-                    rows={4}
-                    className="w-full rounded-lg border border-[var(--border-default)] bg-[var(--bg-main)] px-4 py-2.5 text-sm text-[var(--text-primary)] focus:border-[var(--color-accent)] focus:outline-none transition-colors resize-none"
-                    placeholder="I'm interested in..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-all hover:opacity-90 active:scale-[0.98]"
-                >
-                  <Send className="h-4 w-4" />
-                  Send Message
-                </button>
-              </form>
+            {sendEmailLabel}
+          </a>
+          <a
+            href="https://wa.me/6285188448383"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 rounded-xl border border-[var(--border-default)] bg-[var(--bg-section)] p-4 text-sm font-medium text-[var(--text-primary)] transition-all hover:border-[var(--color-accent)] hover:shadow-lg group"
+          >
+            <div className="p-2 rounded-lg bg-[color:rgba(37,211,102,0.12)] text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+              <MessageCircle className="h-5 w-5" />
             </div>
-
-            {/* Contact Buttons Row */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <a
-                href="mailto:contact@bagdja.com"
-                className="flex items-center justify-center gap-3 rounded-xl border border-[var(--border-default)] bg-[var(--bg-section)] p-4 text-sm font-medium text-[var(--text-primary)] transition-all hover:border-[var(--color-accent)] hover:shadow-lg group"
-              >
-                <div className="p-2 rounded-lg bg-[color:rgba(92,126,154,0.12)] text-[var(--color-accent)] group-hover:bg-[var(--color-accent)] group-hover:text-white transition-colors">
-                  <Mail className="h-5 w-5" />
-                </div>
-                {sendEmailLabel}
-              </a>
-              <a
-                href="https://wa.me/6285188448383"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 rounded-xl border border-[var(--border-default)] bg-[var(--bg-section)] p-4 text-sm font-medium text-[var(--text-primary)] transition-all hover:border-[var(--color-accent)] hover:shadow-lg group"
-              >
-                <div className="p-2 rounded-lg bg-[color:rgba(37,211,102,0.12)] text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-colors">
-                  <MessageCircle className="h-5 w-5" />
-                </div>
-                {sendWALabel}
-              </a>
-            </div>
-          </div>
+            {sendWALabel}
+          </a>
         </div>
       </div>
     </section>
@@ -755,12 +632,8 @@ export function LandingPage({
           eyebrow={t.sections.contactEyebrow}
           title={t.sections.contactTitle}
           subtitle={t.sections.contactSubtitle}
-          formName={t.sections.contactFormName}
-          formEmail={t.sections.contactFormEmail}
-          formMessage={t.sections.contactFormMessage}
           sendEmailLabel={t.sections.contactFormSendEmail}
           sendWALabel={t.sections.contactFormSendWA}
-          locations={t.sections.contactLocations}
         />
 
       </main>

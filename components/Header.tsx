@@ -15,13 +15,10 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
   const navItems = useMemo<NavItem[]>(
     () => [
       { label: t.nav.platform, href: "https://console.bagdja.com" },
-      { label: t.nav.development, href: "https://dev.bagdja.com" },
       { label: t.nav.service, href: "#service" },
       { label: t.nav.project, href: "#project" },
       { label: t.nav.product, href: "#product" },
       { label: t.nav.contact, href: "#contact" },
-      { label: t.nav.store, href: "https://store.bagdja.com" },
-      { label: t.nav.course, href: "https://course.bagdja.com" },
     ],
     [t],
   );
