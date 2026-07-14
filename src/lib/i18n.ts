@@ -252,7 +252,7 @@ export type Messages = {
 
 const en: Messages = {
   nav: {
-    platform: "Platform",
+    platform: "Console",
     development: "Development",
     service: "Service",
     project: "Project",
@@ -679,7 +679,7 @@ const en: Messages = {
 const id: Messages = {
   ...en,
   nav: {
-    platform: "Platform",
+    platform: "Console",
     development: "Development",
     service: "Service",
     project: "Project",
@@ -867,7 +867,7 @@ const id: Messages = {
 const ar: Messages = {
   ...en,
   nav: {
-    platform: "المنصة",
+    platform: "Console",
     development: en.nav.development,
     service: "الخدمات",
     project: en.nav.project,
@@ -1019,7 +1019,7 @@ const ar: Messages = {
 const zh: Messages = {
   ...en,
   nav: {
-    platform: "平台",
+    platform: "Console",
     development: en.nav.development,
     service: "服务",
     project: en.nav.project,
@@ -1167,7 +1167,7 @@ const zh: Messages = {
 const es: Messages = {
   ...en,
   nav: {
-    platform: "Plataforma",
+    platform: "Console",
     development: en.nav.development,
     service: "Servicios",
     project: en.nav.project,
