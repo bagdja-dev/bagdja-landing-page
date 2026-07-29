@@ -144,11 +144,11 @@ export type Messages = {
       consultDesc: string;
       consultWhatsApp: string;
       consultEmail: string;
+      gridCta: string;
       items: Array<{
         id: string;
         title: string;
         description: string;
-        image: string;
       }>;
     };
     latestProjectEyebrow: string;
@@ -327,32 +327,32 @@ const en: Messages = {
       {
         id: "software-house",
         name: "Bagdja Development",
-        pill: "Custom Apps × Product Engineering × Delivery Partner",
-        title: "Ship custom web & mobile apps with Bagdja",
+        pill: "AI-Augmented Engineering × Custom Apps × Delivery Partner",
+        title: "Powering Your Product Launch with AI-Accelerated Development",
         subtitle:
-          "We design, build, and maintain custom applications for startups and teams — from MVP to production.",
-        ctaWhatsApp: "Get a quote on WhatsApp",
-        ctaEmail: "Request via email",
+          "We pair senior engineers with AI-driven workflows to design, build, and ship custom web & mobile apps — from MVP to production, in weeks not months.",
+        ctaWhatsApp: "Let's Chat on WhatsApp",
+        ctaEmail: "Email Us",
         stats: [
-          { value: "Web + Mobile", label: "Platforms" },
-          { value: "End-to-end", label: "Design → Dev → QA" },
-          { value: "Integrations", label: "Payments, auth, analytics" },
+          { value: "AI-Augmented", label: "Engineering workflow" },
+          { value: "Weeks", label: "MVP to launch" },
+          { value: "End-to-end", label: "Design, build & scale" },
         ],
         right: {
-          title: "Your delivery partner",
-          subtitle: "Build • Integrate • Scale",
+          title: "Built with AI, delivered by experts",
+          subtitle: "Design • Build • Scale",
           cards: [
             {
-              title: "Custom build",
-              desc: "MVPs, dashboards, and production apps tailored to your needs.",
+              title: "AI-Assisted Build",
+              desc: "AI-driven tooling speeds up prototyping and production code, without cutting corners on quality.",
             },
             {
-              title: "System integration",
-              desc: "Connect payments, identity, APIs, and data pipelines.",
+              title: "Full-Stack Delivery",
+              desc: "Web, mobile, integrations, and infrastructure — handled end-to-end by one team.",
             },
             {
-              title: "Scale & maintain",
-              desc: "Monitoring, iteration, and long-term support.",
+              title: "Scale & Support",
+              desc: "Monitoring, iteration, and long-term partnership after launch.",
             },
           ],
         },
@@ -433,9 +433,9 @@ const en: Messages = {
       saved: "Time saved vs in-house",
     },
     servicesEyebrow: "Services",
-    servicesTitle: "Our Services",
+    servicesTitle: "Software Development, Accelerated by AI",
     servicesSubtitle:
-      "Beyond the platform, we help teams ship faster with end-to-end services: build, procurement, and partnerships.",
+      "We combine experienced engineers with AI-driven workflows to design, build, and scale your product — end-to-end, faster than a traditional software house.",
     services: {
       customTitle: "Custom App Development",
       customItems: [
@@ -460,24 +460,37 @@ const en: Messages = {
         "Share your requirements — we’ll recommend the best route: platform, services, or a combination.",
       consultWhatsApp: "WhatsApp",
       consultEmail: "Email",
+      gridCta: "Let's Chat on WhatsApp",
       items: [
         {
-          id: "custom",
-          title: "Custom App Development",
-          description: "We design, build, and maintain custom applications for startups and teams — from MVP to production. Our team handles the full lifecycle from discovery to deployment.",
-          image: "/images/services/custom-dev.svg",
+          id: "genai",
+          title: "Generative AI (GenAI)",
+          description: "We help you put GenAI to work inside your product — from AI-assisted features to internal automation — so your team ships smarter, not just faster.",
         },
         {
-          id: "procurement",
-          title: "Procurement & Integration",
-          description: "We help you procure software and solutions that fit your needs. From vendor selection to integration and rollout, we provide end-to-end support with documentation, training, and ongoing support.",
-          image: "/images/services/procurement.svg",
+          id: "prototyping",
+          title: "Prototyping in 3 Weeks",
+          description: "Validate your idea fast. With AI-augmented workflows, we turn a concept into a clickable prototype in as little as three weeks — before you commit to a full build.",
         },
         {
-          id: "partnership",
-          title: "Partnership & Collaboration",
-          description: "Build product and distribution collaboration, co-marketing and channel partnerships, and ecosystem integrations including API, SSO, and billing connections.",
-          image: "/images/services/partnership.svg",
+          id: "uiux",
+          title: "UI/UX Design",
+          description: "We design interfaces that are both intuitive and visually sharp, balancing user experience with business goals so your product feels effortless to use.",
+        },
+        {
+          id: "architecture",
+          title: "Tech Architecture",
+          description: "We design scalable, secure system architecture that fits your growth trajectory — so your foundation holds up as usage, features, and teams grow.",
+        },
+        {
+          id: "webmobile",
+          title: "Web & Mobile Development",
+          description: "From responsive web apps to native-feeling mobile experiences, we build and ship production-ready products across platforms.",
+        },
+        {
+          id: "cloud",
+          title: "Cloud & Infrastructure",
+          description: "We set up reliable, secure cloud infrastructure and DevOps pipelines — so your product scales smoothly without surprises.",
         },
       ],
     },
@@ -740,33 +753,32 @@ const id: Messages = {
       {
         id: "software-house",
         name: "Bagdja Development",
-        pill: "Aplikasi Kustom × Product Engineering × Partner Eksekusi",
-        title: "Bangun aplikasi web & mobile kustom bersama Bagdja",
+        pill: "Rekayasa Berbasis AI × Aplikasi Kustom × Partner Eksekusi",
+        title: "Percepat Peluncuran Produk Anda dengan Pengembangan Berbasis AI",
         subtitle:
-          "Kami bantu desain, development, dan maintenance aplikasi kustom — dari MVP sampai production.",
-        ctaWhatsApp: "Minta penawaran via WhatsApp",
-        ctaEmail: "Minta via Email",
+          "Kami memadukan engineer berpengalaman dengan workflow berbasis AI untuk mendesain, membangun, dan merilis aplikasi web & mobile kustom — dari MVP ke production, dalam hitungan minggu bukan bulan.",
+        ctaWhatsApp: "Chat via WhatsApp",
+        ctaEmail: "Kirim Email",
         stats: [
-          { value: "Web + Mobile", label: "Platform" },
-          { value: "End-to-end", label: "Desain → Dev → QA" },
-          { value: "Integrasi", label: "Payment, auth, analytics" },
-          { value: "Support", label: "Opsi maintenance" },
+          { value: "Berbasis AI", label: "Workflow engineering" },
+          { value: "Hitungan Minggu", label: "MVP ke peluncuran" },
+          { value: "End-to-end", label: "Desain, build & scale" },
         ],
         right: {
-          title: "Partner eksekusi Anda",
-          subtitle: "Build • Integrasi • Scale",
+          title: "Dibangun dengan AI, dieksekusi oleh ahlinya",
+          subtitle: "Desain • Build • Scale",
           cards: [
             {
-              title: "Pembuatan kustom",
-              desc: "MVP, dashboard, dan aplikasi produksi sesuai kebutuhan.",
+              title: "Build Dibantu AI",
+              desc: "Tooling berbasis AI mempercepat prototyping dan kode produksi, tanpa mengorbankan kualitas.",
             },
             {
-              title: "Integrasi sistem",
-              desc: "Hubungkan payment, identity, API, dan data.",
+              title: "Delivery Full-Stack",
+              desc: "Web, mobile, integrasi, dan infrastruktur — ditangani end-to-end oleh satu tim.",
             },
             {
-              title: "Scale & maintenance",
-              desc: "Monitoring, iterasi, dan support jangka panjang.",
+              title: "Scale & Support",
+              desc: "Monitoring, iterasi, dan partnership jangka panjang setelah rilis.",
             },
           ],
         },
@@ -787,9 +799,51 @@ const id: Messages = {
     platformTitle: "Dibuat untuk developer, dicintai pengguna",
     platformSubtitle:
       "Buat infrastruktur jadi tidak terlihat. Fokus ke produk, bukan plumbing.",
-    servicesTitle: "Layanan Kami",
+    servicesTitle: "Pengembangan Software, Dipercepat dengan AI",
     servicesSubtitle:
-      "Selain platform, kami bantu tim ship lebih cepat lewat layanan end-to-end: build, pengadaan, dan partnership.",
+      "Kami memadukan engineer berpengalaman dengan workflow berbasis AI untuk mendesain, membangun, dan menskalakan produk Anda — end-to-end, lebih cepat dari software house tradisional.",
+    services: {
+      ...en.sections.services,
+      gridCta: "Chat via WhatsApp",
+      items: [
+        {
+          id: "genai",
+          title: "AI Generatif (GenAI)",
+          description:
+            "Kami bantu memanfaatkan GenAI di dalam produk Anda — mulai dari fitur berbasis AI hingga otomasi internal — supaya tim Anda bekerja lebih cerdas, bukan sekadar lebih cepat.",
+        },
+        {
+          id: "prototyping",
+          title: "Prototyping dalam 3 Minggu",
+          description:
+            "Validasi ide Anda dengan cepat. Dengan workflow berbasis AI, kami ubah konsep menjadi prototipe interaktif hanya dalam tiga minggu — sebelum Anda berkomitmen ke pengembangan penuh.",
+        },
+        {
+          id: "uiux",
+          title: "Desain UI/UX",
+          description:
+            "Kami mendesain antarmuka yang intuitif sekaligus enak dipandang, menyeimbangkan pengalaman pengguna dengan tujuan bisnis agar produk Anda terasa mudah digunakan.",
+        },
+        {
+          id: "architecture",
+          title: "Arsitektur Teknologi",
+          description:
+            "Kami merancang arsitektur sistem yang skalabel dan aman, sesuai jalur pertumbuhan Anda — agar fondasi tetap kokoh seiring bertambahnya pengguna, fitur, dan tim.",
+        },
+        {
+          id: "webmobile",
+          title: "Pengembangan Web & Mobile",
+          description:
+            "Dari aplikasi web responsif hingga pengalaman mobile yang terasa native, kami membangun dan merilis produk siap-produksi di berbagai platform.",
+        },
+        {
+          id: "cloud",
+          title: "Cloud & Infrastruktur",
+          description:
+            "Kami menyiapkan infrastruktur cloud yang andal dan aman beserta pipeline DevOps — agar produk Anda scale dengan mulus tanpa kejutan.",
+        },
+      ],
+    },
     marketTitle: "Ekosistem besar yang menunggu untuk dipersatukan",
     whyNowTitle: "Kenapa sekarang",
     gtmTitle: "Dari nol menjadi ekosistem",

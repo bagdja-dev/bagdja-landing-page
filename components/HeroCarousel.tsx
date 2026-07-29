@@ -94,8 +94,8 @@ export function HeroCarousel({ slides }: { slides: Slide[] }) {
       }}
     >
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(800px_circle_at_30%_20%,rgba(229,160,68,0.20),transparent_60%),radial-gradient(700px_circle_at_70%_35%,rgba(92,126,154,0.18),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(26,29,33,0.25),rgba(26,29,33,1))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(800px_circle_at_30%_20%,rgba(193,121,29,0.10),transparent_60%),radial-gradient(700px_circle_at_70%_35%,rgba(76,106,131,0.10),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(247,245,241,0.15),rgba(247,245,241,1))]" />
       </div>
 
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
@@ -114,7 +114,7 @@ export function HeroCarousel({ slides }: { slides: Slide[] }) {
                 type="button"
                 onClick={prev}
                 aria-label="Previous"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border-default)] bg-[color:rgba(32,36,42,0.55)] text-[var(--text-primary)] hover:border-[color:rgba(229,160,68,0.6)]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border-default)] bg-[color:rgba(255,255,255,0.7)] text-[var(--text-primary)] hover:border-[color:rgba(193,121,29,0.6)]"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
@@ -122,7 +122,7 @@ export function HeroCarousel({ slides }: { slides: Slide[] }) {
                 type="button"
                 onClick={next}
                 aria-label="Next"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border-default)] bg-[color:rgba(32,36,42,0.55)] text-[var(--text-primary)] hover:border-[color:rgba(229,160,68,0.6)]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[var(--border-default)] bg-[color:rgba(255,255,255,0.7)] text-[var(--text-primary)] hover:border-[color:rgba(193,121,29,0.6)]"
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
@@ -152,7 +152,7 @@ export function HeroCarousel({ slides }: { slides: Slide[] }) {
                 >
                   <div className="grid items-center gap-10 md:grid-cols-2">
                     <div className="animate-float-up">
-                      <div className="mb-5 inline-flex items-center rounded-full border border-[var(--border-default)] bg-[color:rgba(32,36,42,0.6)] px-3 py-1 text-xs text-[var(--text-secondary)]">
+                      <div className="mb-5 inline-flex items-center rounded-full border border-[var(--border-default)] bg-[color:rgba(255,255,255,0.6)] px-3 py-1 text-xs text-[var(--text-secondary)]">
                         {slide.pill}
                       </div>
                       <h1 className="text-4xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-5xl">
@@ -174,7 +174,7 @@ export function HeroCarousel({ slides }: { slides: Slide[] }) {
                         </a>
                         <a
                           href="mailto:contact@bagdja.com"
-                          className="inline-flex items-center justify-center gap-2 rounded-xl border border-[var(--border-default)] bg-transparent px-5 py-3 text-sm font-medium text-[var(--text-primary)] hover:border-[color:rgba(229,160,68,0.6)] cursor-pointer"
+                          className="inline-flex items-center justify-center gap-2 rounded-xl border border-[var(--border-default)] bg-transparent px-5 py-3 text-sm font-medium text-[var(--text-primary)] hover:border-[color:rgba(193,121,29,0.6)] cursor-pointer"
                         >
                           {slide.ctaEmail}
                           <ArrowRight className="h-4 w-4" />
@@ -199,9 +199,9 @@ export function HeroCarousel({ slides }: { slides: Slide[] }) {
                     </div>
 
                     <div className="relative">
-                      <div className="rounded-3xl border border-[var(--border-default)] bg-[color:rgba(32,36,42,0.65)] p-6">
+                      <div className="rounded-3xl border border-[var(--border-default)] bg-[color:rgba(255,255,255,0.65)] p-6">
                         <div className="flex items-center gap-3">
-                          <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[color:rgba(229,160,68,0.16)] text-[var(--action-primary)]">
+                          <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[color:rgba(193,121,29,0.14)] text-[var(--action-primary)]">
                             <HeaderIcon className="h-5 w-5" />
                           </div>
                           <div>
@@ -245,8 +245,8 @@ export function HeroCarousel({ slides }: { slides: Slide[] }) {
                         </div>
                       </div>
 
-                      <div className="pointer-events-none absolute -right-10 -top-10 -z-10 h-40 w-40 rounded-full bg-[color:rgba(229,160,68,0.22)] blur-3xl" />
-                      <div className="pointer-events-none absolute -bottom-10 -left-10 -z-10 h-40 w-40 rounded-full bg-[color:rgba(92,126,154,0.22)] blur-3xl" />
+                      <div className="pointer-events-none absolute -right-10 -top-10 -z-10 h-40 w-40 rounded-full bg-[color:rgba(193,121,29,0.14)] blur-3xl" />
+                      <div className="pointer-events-none absolute -bottom-10 -left-10 -z-10 h-40 w-40 rounded-full bg-[color:rgba(76,106,131,0.14)] blur-3xl" />
                     </div>
                   </div>
                 </div>
@@ -267,8 +267,8 @@ export function HeroCarousel({ slides }: { slides: Slide[] }) {
                 className={[
                   "inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs",
                   safeActiveIndex === idx
-                    ? "border-[color:rgba(229,160,68,0.6)] bg-[color:rgba(229,160,68,0.10)] text-[var(--text-primary)]"
-                    : "border-[var(--border-default)] bg-[color:rgba(32,36,42,0.4)] text-[var(--text-secondary)] hover:border-[color:rgba(229,160,68,0.4)]",
+                    ? "border-[color:rgba(193,121,29,0.6)] bg-[color:rgba(193,121,29,0.08)] text-[var(--text-primary)]"
+                    : "border-[var(--border-default)] bg-[color:rgba(255,255,255,0.5)] text-[var(--text-secondary)] hover:border-[color:rgba(193,121,29,0.4)]",
                 ].join(" ")}
               >
                 <span
@@ -276,7 +276,7 @@ export function HeroCarousel({ slides }: { slides: Slide[] }) {
                     "h-1.5 w-1.5 rounded-full",
                     safeActiveIndex === idx
                       ? "bg-[var(--action-primary)]"
-                      : "bg-[color:rgba(136,150,164,0.7)]",
+                      : "bg-[color:rgba(91,101,112,0.5)]",
                   ].join(" ")}
                 />
                 <span>{slide.name}</span>

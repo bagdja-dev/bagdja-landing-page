@@ -24,10 +24,10 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
   );
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border-default)] bg-[color:rgba(26,29,33,0.8)] backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-[var(--border-default)] bg-[color:rgba(247,245,241,0.8)] backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href={`/${locale}`} className="flex items-center gap-2">
-          <Image src="/logo-gold.png" alt="Bagdja" width={92} height={28} priority />
+          <Image src="/logo.png" alt="Bagdja" width={92} height={28} priority />
           <span className="sr-only">Bagdja</span>
         </Link>
 
@@ -47,7 +47,7 @@ export function Header({ locale, t }: { locale: Locale; t: Messages }) {
           <LanguageSwitcher locale={locale} />
           <a
             href="mailto:contact@bagdja.com"
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--border-default)] bg-transparent px-3 py-2 text-sm text-[var(--text-primary)] hover:border-[color:rgba(229,160,68,0.6)]"
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--border-default)] bg-transparent px-3 py-2 text-sm text-[var(--text-primary)] hover:border-[color:rgba(193,121,29,0.6)]"
           >
             <Mail className="h-4 w-4" />
             {t.nav.email}

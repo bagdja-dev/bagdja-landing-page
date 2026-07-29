@@ -23,10 +23,10 @@ export function Footer({ t }: { t: Messages }) {
           >
             {t.footer.whatsappLabel} +62 851-8844-8383
           </a>
-          <span className="text-xs text-[color:rgba(136,150,164,0.85)]">
+          <span className="text-xs text-[color:rgba(91,101,112,0.85)]">
             © {new Date().getFullYear()} Bagdja. {t.footer.rights}
           </span>
-          <span className="text-xs text-[color:rgba(136,150,164,0.85)]">
+          <span className="text-xs text-[color:rgba(91,101,112,0.85)]">
             {t.footer.legalEntity}
           </span>
         </div>

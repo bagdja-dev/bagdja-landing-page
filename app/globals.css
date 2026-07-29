@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  /* Pitch deck palette */
-  --bagdja-bg: #1a1d21;
-  --bagdja-surface: #20242a;
-  --bagdja-surface-2: #16181b;
-  --bagdja-border: rgba(224, 226, 229, 0.12);
-  --bagdja-text: #e0e2e5;
-  --bagdja-text-2: #8896a4;
-  --bagdja-accent: #e5a044;
-  --bagdja-accent-2: #5c7e9a;
+  /* Light palette */
+  --bagdja-bg: #ffffff;
+  --bagdja-surface: #ffffff;
+  --bagdja-surface-2: #ffffff;
+  --bagdja-border: rgba(26, 29, 33, 0.1);
+  --bagdja-text: #1a1d21;
+  --bagdja-text-2: #5b6570;
+  --bagdja-accent: #c1791d;
+  --bagdja-accent-2: #4c6a83;
 
   /* App tokens */
   --bg-main: var(--bagdja-bg);
@@ -20,6 +20,7 @@
   --text-secondary: var(--bagdja-text-2);
   --action-primary: var(--bagdja-accent);
   --action-secondary: var(--bagdja-accent-2);
+  --color-accent: var(--bagdja-accent);
 }
 
 body {

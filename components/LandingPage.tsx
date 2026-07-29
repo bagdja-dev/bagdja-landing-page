@@ -4,11 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  Brain,
   ChevronLeft,
   ChevronRight,
+  Cloud,
   Mail,
   MessageCircle,
+  Network,
+  PenTool,
   Phone,
+  Rocket,
+  Smartphone,
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -169,83 +175,82 @@ function PartnerSection({
   );
 }
 
+function getServiceIcon(id: string) {
+  switch (id) {
+    case "genai":
+      return Brain;
+    case "prototyping":
+      return Rocket;
+    case "uiux":
+      return PenTool;
+    case "architecture":
+      return Network;
+    case "webmobile":
+      return Smartphone;
+    case "cloud":
+      return Cloud;
+    default:
+      return Brain;
+  }
+}
+
 function ServiceSection({
   eyebrow,
   title,
   subtitle,
+  cta,
   items,
 }: {
   eyebrow?: string;
   title: string;
   subtitle?: string;
-  items: Array<{ id: string; title: string; description: string; image: string }>;
+  cta: string;
+  items: Array<{ id: string; title: string; description: string }>;
 }) {
   return (
     <section id="services" className="scroll-mt-24 border-t border-[var(--border-default)]">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="mb-10 max-w-full">
-
-          <h2 className="text-2xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-3xl justify-center align-middle flex">
+        <div className="mb-10 max-w-full text-center">
+          <h2 className="text-2xl font-semibold tracking-tight text-[var(--text-primary)] sm:text-3xl">
             {title}
           </h2>
           {subtitle ? (
-            <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)] sm:text-base justify-center align-middle flex">
+            <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)] sm:text-base max-w-2xl mx-auto">
               {subtitle}
             </p>
           ) : null}
         </div>
 
-        <div className="space-y-12 overflow-hidden">
-          {items.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex flex-col gap-8 rounded-2xl border border-[var(--border-default)] bg-[var(--bg-section)] p-6 sm:p-8 lg:flex-row lg:items-center"
-            >
-              {index % 2 === 0 ? (
-                <>
-                  <div className="relative h-64 w-full overflow-hidden rounded-xl bg-[color:rgba(92,126,154,0.12)] sm:h-80 lg:h-96 lg:w-1/2">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-contain p-8"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-4 lg:w-1/2">
-                    <h3 className="text-xl font-semibold text-[var(--text-primary)] sm:text-2xl">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm leading-6 text-[var(--text-secondary)] sm:text-base">
-                      {item.description}
-                    </p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="flex flex-col gap-4 lg:w-1/2">
-                    <h3 className="text-xl font-semibold text-[var(--text-primary)] sm:text-2xl">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm leading-6 text-[var(--text-secondary)] sm:text-base">
-                      {item.description}
-                    </p>
-                  </div>
-                  <div className="relative h-64 w-full overflow-hidden rounded-xl bg-[color:rgba(92,126,154,0.12)] sm:h-80 lg:h-96 lg:w-1/2">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-contain p-8"
-                    />
-                  </div>
-                </>
-              )}
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item, index) => {
+            const Icon = getServiceIcon(item.id);
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
+                className="flex flex-col items-center gap-4 rounded-2xl border border-[var(--border-default)] bg-[var(--bg-section)] p-8 text-center"
+              >
+                <Icon className="h-12 w-12 text-[var(--text-primary)]" strokeWidth={1.25} />
+                <h3 className="text-lg font-semibold text-[var(--text-primary)]">
+                  {item.title}
+                </h3>
+                <p className="text-sm leading-6 text-[var(--text-secondary)]">
+                  {item.description}
+                </p>
+                <a
+                  href="https://wa.me/6285188448383"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 inline-flex items-center justify-center rounded-lg bg-[var(--action-primary)] px-4 py-2 text-sm font-medium text-[#111] hover:brightness-105"
+                >
+                  {cta}
+                </a>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -528,7 +533,7 @@ function ContactSection({
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-3 rounded-xl border border-[var(--border-default)] bg-[var(--bg-section)] p-4 text-sm font-medium text-[var(--text-primary)] transition-all hover:border-[var(--color-accent)] hover:shadow-lg group"
           >
-            <div className="p-2 rounded-lg bg-[color:rgba(37,211,102,0.12)] text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+            <div className="p-2 rounded-lg bg-[color:rgba(37,211,102,0.12)] text-[#0e8345] group-hover:bg-[#0e8345] group-hover:text-white transition-colors">
               <MessageCircle className="h-5 w-5" />
             </div>
             {sendWALabel}
@@ -607,6 +612,7 @@ export function LandingPage({
           eyebrow={t.sections.servicesEyebrow}
           title={t.sections.servicesTitle}
           subtitle={t.sections.servicesSubtitle}
+          cta={t.sections.services.gridCta}
           items={t.sections.services.items}
         />
 

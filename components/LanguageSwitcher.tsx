@@ -22,7 +22,7 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
     <div className="relative">
       <button
         type="button"
-        className="inline-flex items-center gap-2 rounded-full border border-[var(--border-default)] bg-transparent px-3 py-2 text-sm text-[var(--text-primary)] hover:border-[color:rgba(229,160,68,0.6)]"
+        className="inline-flex items-center gap-2 rounded-full border border-[var(--border-default)] bg-transparent px-3 py-2 text-sm text-[var(--text-primary)] hover:border-[color:rgba(193,121,29,0.6)]"
         aria-haspopup="menu"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
@@ -43,8 +43,8 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
               href={it.href}
               className={`block px-4 py-2 text-sm ${
                 it.code === locale
-                  ? "bg-[color:rgba(92,126,154,0.14)] text-[var(--text-primary)]"
-                  : "text-[var(--text-secondary)] hover:bg-[color:rgba(255,255,255,0.04)] hover:text-[var(--text-primary)]"
+                  ? "bg-[color:rgba(76,106,131,0.14)] text-[var(--text-primary)]"
+                  : "text-[var(--text-secondary)] hover:bg-[color:rgba(26,29,33,0.05)] hover:text-[var(--text-primary)]"
               }`}
               onClick={() => setOpen(false)}
             >
