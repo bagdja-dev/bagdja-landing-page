@@ -246,7 +246,6 @@ export type Messages = {
     tagline: string;
     rights: string;
     whatsappLabel: string;
-    legalEntity: string;
   };
 };
 
@@ -684,8 +683,6 @@ const en: Messages = {
     tagline: "Store × Identity × Monetize — in one integrated platform.",
     rights: "All rights reserved.",
     whatsappLabel: "WhatsApp:",
-    legalEntity:
-      "Bagdja is a trademark of PT. Cakra Indo Amerta, headquartered in Garut, West Java, Indonesia.",
   },
 };
 
@@ -913,8 +910,6 @@ const id: Messages = {
   footer: {
     ...en.footer,
     tagline: "Store × Identity × Monetize — dalam satu platform terintegrasi.",
-    legalEntity:
-      "Bagdja adalah merek dagang dari PT. Cakra Indo Amerta, berkantor pusat di Garut, Jawa Barat, Indonesia.",
   },
 };
 
@@ -1065,8 +1060,6 @@ const ar: Messages = {
     tagline: "Store × Identity × Monetize — ضمن منصة واحدة متكاملة.",
     rights: "جميع الحقوق محفوظة.",
     whatsappLabel: "واتساب:",
-    legalEntity:
-      "Bagdja علامة تجارية مملوكة لشركة PT. Cakra Indo Amerta، ومقرها الرئيسي في غاروت، جاوة الغربية، إندونيسيا.",
   },
 };
 
@@ -1213,8 +1206,6 @@ const zh: Messages = {
   footer: {
     ...en.footer,
     tagline: "Store × Identity × Monetize — 一体化平台。",
-    legalEntity:
-      "Bagdja 是 PT. Cakra Indo Amerta 旗下的商标，总部位于印度尼西亚西爪哇省加鲁特（Garut）。",
   },
 };
 
@@ -1363,8 +1354,6 @@ const es: Messages = {
   footer: {
     ...en.footer,
     tagline: "Store × Identity × Monetize — en una plataforma integrada.",
-    legalEntity:
-      "Bagdja es una marca registrada de PT. Cakra Indo Amerta, con sede central en Garut, Java Occidental, Indonesia.",
   },
 };
 
