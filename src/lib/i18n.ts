@@ -246,6 +246,7 @@ export type Messages = {
     tagline: string;
     rights: string;
     whatsappLabel: string;
+    legalEntity: string;
   };
 };
 
@@ -683,6 +684,7 @@ const en: Messages = {
     tagline: "Store × Identity × Monetize — in one integrated platform.",
     rights: "All rights reserved.",
     whatsappLabel: "WhatsApp:",
+    legalEntity: "PT. Bagdja Indonesia",
   },
 };
 
