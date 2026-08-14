@@ -684,7 +684,7 @@ const en: Messages = {
     tagline: "Store × Identity × Monetize — in one integrated platform.",
     rights: "All rights reserved.",
     whatsappLabel: "WhatsApp:",
-    legalEntity: "PT. Bagdja Indonesia",
+    legalEntity: "KP Bunisari RT 004 RW 004, Desa Limbangan Tengah, Kec. BL Limbangan, Kab. Garut, Jawa Barat 44168",
   },
 };
 
