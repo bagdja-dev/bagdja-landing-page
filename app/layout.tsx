@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   },
   description:
     "Bagdja unifies distribution (Store), identity (SSO/Auth), and monetization (Billing) into one SDK and dashboard — built for modern developers.",
+  other: {
+    "google-adsense-account": "ca-pub-2126630801090914",
+  },
   openGraph: {
     type: "website",
     title: "Bagdja — The Integrated Distribution Platform",
