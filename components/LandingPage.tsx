@@ -320,7 +320,7 @@ function LatestProjectSection({
             </div>
             {seeAll ? (
               <a
-                href={`${process.env.NEXT_PUBLIC_PROJECT_BASE_URL}/digital`}
+                href={`${process.env.NEXT_PUBLIC_PROJECT_BASE_URL}/dev/projects`}
                 className="inline-flex items-center gap-2 rounded-lg border border-[var(--border-default)] bg-[var(--bg-main)] px-4 py-2 text-sm font-medium text-[var(--text-primary)] transition-colors hover:bg-[var(--bg-section)] hover:border-[var(--color-accent)]"
               >
                 {seeAll}
